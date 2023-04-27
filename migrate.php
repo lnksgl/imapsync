@@ -1,18 +1,14 @@
 <?php
 
-require '/home/user/script/PHPMailer/src/Exception.php';
-require '/home/user/script/PHPMailer/src/PHPMailer.php';
-require '/home/user/script/PHPMailer/src/SMTP.php';
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-/*
-  Functions
-*/
-
-/* Write log to the filesystem */
+/* Write log to the Zammad */
 function sendlog($address, $message)
 {
     $mail = new PHPMailer(true);
@@ -21,7 +17,7 @@ function sendlog($address, $message)
     $mail->Host = 'smtp.gmail.com'; //gmail: smtp.gmail.com
     $mail->SMTPAuth = true;
     $mail->Username = 'admin@gmail.com';
-    $mail->Password = 'admin';
+    $mail->Password = 'password';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setLanguage('ru');
@@ -40,19 +36,18 @@ function sendlog($address, $message)
 /*
 Start the job
 */
-
-$file_data = fopen("/home/user/script/credentials.txt", 'r') or die("invalid file name.");
+$file_data = fopen("./credentials.txt", 'r') or die("invalid file name.");
 
 while(!feof($file_data))
 {
     $credentials = htmlentities(fgets($file_data));
     $credential = explode("|", $credentials);
  
-    $open = shell_exec('./startimapsync.sh "'.$credential[0].'" "'.$credential[1].'" "'.$credential[2].'" "'.$credential[3].'" "'.$credential[4].'" "'.$credential[5].'"');
-    
-    echo $open;
-    
-    sendlog($target_username, 'Migration for ' . $target_username . ' completed successfully.');
+    if($credential[0] != '') {
+	$open = shell_exec('./startimapsync.sh "'.$credential[0].'" "'.$credential[1].'" "'.$credential[2].'" "'.$credential[3].'" "'.$credential[4].'" "'.$credential[5].'"');
+	    
+	sendlog($credential[1], 'Migration for ' . $credential[1] . ' completed successfully.');
+    }
 }
 fclose($file_data);
 
