@@ -1,8 +1,8 @@
 <?php
 
-require '/home/user/PHPMailer/src/Exception.php';
-require '/home/user/PHPMailer/src/PHPMailer.php';
-require '/home/user/PHPMailer/src/SMTP.php';
+require '/home/user/imapsync/PHPMailer/src/Exception.php';
+require '/home/user/imapsync/PHPMailer/src/PHPMailer.php';
+require '/home/user/imapsync/PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -42,7 +42,7 @@ function sendlog($address, $message)
 /* Keep track on processed folders */
 function migratedfolders($folder)
 {
-    file_put_contents('home/user/imap_migration_history', $data . "\n", FILE_APPEND);
+    file_put_contents('/home/user/imapsync/imap_migration_history', $data . "\n", FILE_APPEND);
 }
 
 
@@ -50,7 +50,7 @@ function migratedfolders($folder)
 Start the job
 */
 
-$file_data = fopen("/home/user/credentials.txt", 'r') or die("invalid file name.");
+$file_data = fopen("/home/user/imapsync/credentials.txt", 'r') or die("invalid file name.");
 
 while(!feof($file_data))
 {
@@ -80,15 +80,15 @@ while(!feof($file_data))
             $folderpath = str_replace($source_connectionstring, "", $value);
 
             /* Check if the folder already are completely migrated */
-            if (is_file('home/user/imap_migration_history')) {
+            if (is_file('home/user/imapsync/imap_migration_history')) {
                 $migratedfolders = explode("\n", file_get_contents('home/user/imap_migration_history'));
             }
 
             if (!in_array($folderpath, $migratedfolders)) {
                 /* Remove the folder name and keep the path     */
-                $targetpath = explode("home/user/", $folderpath);
+                $targetpath = explode("/home/user/imapsync/", $folderpath);
                 array_pop($targetpath);
-                $targetroot = mb_convert_encoding(implode("home/user/", $targetpath), "UTF7-IMAP", "ISO-8859-1");
+                $targetroot = mb_convert_encoding(implode("/home/user/imapsync/", $targetpath), "UTF7-IMAP", "ISO-8859-1");
 
                 /* Connect to the server */
                 $target_imap = imap_open($target_connectionstring . $target_folder . $targetroot, $target_username, $target_password)
