@@ -1,0 +1,1 @@
+ * * * * run-parts --regex '^m.*sh$' ~/home/user/Documents/imapsync/cron

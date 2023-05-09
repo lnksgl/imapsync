@@ -24,10 +24,7 @@
 	    
 	    <TR><TD><B>IMAP сервер:<B></TD>
 	    <TD><INPUT NAME="msrv2" SIZE=20 VALUE=""<TD>
-	</TABLE>
-	    
-	<INPUT TYPE="button" VALUE="Выполнить" onClick="Complete();">
-	    
+	</TABLE>	    
 	<INPUT TYPE="submit" NAME="submit" VALUE="Отправить данные">
     </FORM>
 </body>
