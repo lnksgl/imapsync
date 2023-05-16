@@ -24,9 +24,39 @@
 	    
 	    <TR><TD><B>IMAP сервер:<B></TD>
 	    <TD><INPUT NAME="msrv2" SIZE=20 VALUE=""<TD>
+	    
+	    <TR><TD><B>С какой даты осуществляется перенос:<B></TD>
+	    
+	    <TR><TD><B>Число:<B></TD>
+	    <TD><INPUT NAME="day" SIZE=20 VALUE=""
+	    
+	    <TR><TD><B>Месяц:<B>
+	    <TD>
+	    	<select name = "month">
+			<option>Jan</option>
+			<option>Feb</option>
+			<option>Mar</option>
+			<option>Apr</option>
+			<option>May</option>
+			<option>Jun</option>
+			<option>Jan</option>
+			<option>Jul</option>
+			<option>Aug</option>
+			<option>Sep</option>
+			<option>Oct</option>
+			<option>Nov</option>
+			<option>Dec</option>
+	    	</select>
+	    
+	    <TR><TD><B>Год:<B></TD>
+	    <TD><INPUT NAME="year" SIZE=20 VALUE=""<TD>
+	    
+	    
+	   
 	</TABLE>	    
 	<INPUT formaction="check-size.php" TYPE="submit" NAME="submit" VALUE="Проверить размер">
-	<INPUT formaction="code.php" TYPE="submit" NAME="submit" VALUE="Отправить данные">
+	<INPUT formaction="migrate.php" TYPE="submit" NAME="submit" VALUE="Перенести">
+	<INPUT formaction="migrate-date.php" TYPE="submit" NAME="submit" VALUE="Перенести с учетом даты">
     </FORM>
 </body>
 </html>
