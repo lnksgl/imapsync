@@ -1,0 +1,1133 @@
+Here is imapsync 2.229 on host migration-virtual-machine, a linux system with 0.1/3.8 free GiB of RAM, 88.91% used by processes.
+with Perl 5.34.0 and Mail::IMAPClient 3.43
+Transfer started at Нядзеля 14 мая 2023-05-14 03:50:03 +0300 +03
+PID is 18500 my PPID is 18497
+Log file is LOG_imapsync/2023_05_14_03_50_03_828_as@mdfkl.by_as@mdfkl.by.txt ( to change it, use --logfile path ; or use --nolog to turn off logging )
+Load is 0.76 0.50 0.28 2/741 on 2 cores
+Current directory is /home/migration/Documents/imapsync/cron
+Real user id is migration (uid 1000)
+Effective user id is migration (euid 1000)
+$RCSfile: imapsync,v $ $Revision: 2.229 $ $Date: 2022/09/14 18:08:24 $ 
+Command line used, run by /usr/bin/perl:
+/home/migration/Documents/imapsync/cron/imapsync/./imapsync --host1 imap.yandex.ru --user1 as@mdfkl.by --password1 MASKED --ssl1 --host2 webmail.mail01.hb.by --user2 as@mdfkl.by --password2 MASKED --ssl2
+Temp directory is /tmp ( to change it use --tmpdir dirpath )
+kill -QUIT 18500 # special behavior: call to sub catch_exit
+kill -TERM 18500 # special behavior: call to sub catch_exit
+kill -INT 18500 # special behavior: call to sub catch_reconnect
+kill -HUP 18500 # special behavior: call to sub catch_print
+kill -USR1 18500 # special behavior: call to sub toggle_sleep
+Another imapsync process 18450 is running as says pidfile /tmp/imapsync.pid
+PID file is /tmp/imapsync.pid ( to change it, use --pidfile filepath ; to avoid it use --pidfile "" )
+/tmp/imapsync.pid already exists, overwriting it ( use --pidfilelocking to avoid concurrent runs )
+Writing my PID 18500 in /tmp/imapsync.pid
+Writing also my logfile name in /tmp/imapsync.pid : LOG_imapsync/2023_05_14_03_50_03_828_as@mdfkl.by_as@mdfkl.by.txt
+Modules version list ( use --no-modulesversion to turn off printing this Perl modules list ):
+Authen::NTLM         1.09
+CGI                  Not installed
+Compress::Zlib       2.102
+Crypt::OpenSSL::RSA  0.33
+Data::Uniqid         0.12
+Digest::HMAC_MD5     1.04
+Digest::HMAC_SHA1    1.04
+Digest::MD5          2.58
+Encode               3.08
+Encode::IMAPUTF7     1.05
+File::Copy::Recursive 0.45
+File::Spec           3.80
+Getopt::Long         2.52
+HTML::Entities       3.76
+IO::Socket           1.46
+IO::Socket::INET     1.46
+IO::Socket::INET6    2.73
+IO::Socket::IP       0.41
+IO::Socket::SSL      2.074
+IO::Tee              0.65
+JSON                 4.10
+JSON::WebToken       0.10
+LWP                  6.61
+MIME::Base64         3.16
+Mail::IMAPClient     3.43
+Net::Ping            2.74
+Net::SSLeay          1.92
+Term::ReadKey        2.38
+Test::MockObject     1.20200122
+Time::HiRes          1.9767
+URI::Escape          5.10
+Unicode::String      2.10
+
+Info: will resync flags for already transferred messages. Use --noresyncflags to not resync flags.
+SSL debug mode level is --debugssl 1 (can be set from 0 meaning no debug to 4 meaning max debug)
+Host1: SSL default mode is like --sslargs1 "SSL_verify_mode=0", meaning for host1 SSL_VERIFY_NONE, ie, do not check the server certificate.
+Host1: Use --sslargs1 SSL_verify_mode=1 to have SSL_VERIFY_PEER, ie, check the server certificate. of host1
+Host2: SSL default mode is like --sslargs2 "SSL_verify_mode=0", meaning for host2 SSL_VERIFY_NONE, ie, do not check the server certificate.
+Host2: Use --sslargs2 SSL_verify_mode=1 to have SSL_VERIFY_PEER, ie, check the server certificate. of host2
+Info: turned ON syncinternaldates, will set the internal dates (arrival dates) on host2 same as host1.
+Host1: will try to use LOGIN authentication on host1
+Host2: will try to use LOGIN authentication on host2
+Host1: imap connection timeout is 120 seconds
+Host2: imap connection timeout is 120 seconds
+Host1: imap connection keepalive is on on host1. Use --nokeepalive1 to disable it.
+Host2: imap connection keepalive is on on host2. Use --nokeepalive2 to disable it.
+Host1: IMAP server [imap.yandex.ru] port [993] user [as@mdfkl.by]
+Host2: IMAP server [webmail.mail01.hb.by] port [993] user [as@mdfkl.by]
+Host1: connecting and login on host1 [imap.yandex.ru] port [993] with user [as@mdfkl.by]
+Host1 IP address: 77.88.21.125 Local IP address: 192.168.200.147
+Host1 banner: * OK Yandex IMAP4rev1 at mail-imap-production-985.iva.yp-c.yandex.net:993 ready to talk with ::ffff:46.53.145.7:55563, 2023-May-14 03:50:06, 6oMrArHmGKo0
+Host1 capability before authentication: IMAP4rev1 CHILDREN UNSELECT LITERAL+ NAMESPACE XLIST BINARY UIDPLUS ENABLE ID AUTH=PLAIN AUTH=XOAUTH2 IDLE MOVE AUTH
+Host1: success login on [imap.yandex.ru] with user [as@mdfkl.by] auth [LOGIN] or [LOGIN]
+Host2: connecting and login on host2 [webmail.mail01.hb.by] port [993] with user [as@mdfkl.by]
+Host2 IP address: 134.17.94.46 Local IP address: 192.168.200.147
+Host2 banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5] Dovecot ready.
+Host2 capability before authentication: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN AUTH=DIGEST-MD5 AUTH=CRAM-MD5 AUTH
+Host2: webmail.mail01.hb.by says it has CAPABILITY for AUTHENTICATE LOGIN
+Host2: success login on [webmail.mail01.hb.by] with user [as@mdfkl.by] auth [LOGIN] or [LOGIN]
+Host1: state Authenticated
+Host2: state Authenticated
+Host1 capability once authenticated: IMAP4rev1 CHILDREN UNSELECT LITERAL+ NAMESPACE XLIST BINARY UIDPLUS ENABLE ID IDLE MOVE
+Host2 capability once authenticated: IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE QUOTA THREAD I18NLEVEL CONTEXT SNIPPET PREVIEW STATUS
+Host1: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 4 ID ("name" "imapsync" "version" "2.229" "os" "linux" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host1")
+Sent 181 bytes
+Read: 	* ID ("name" "Yandex Mail" "vendor" "Yandex" "support-url" "http://feedback.yandex.ru/?from=mail")
+Read: 	4 OK ID Completed.
+Host2: found ID capability. Sending/receiving ID, presented in raw IMAP for now.
+In order to avoid sending/receiving ID, use option --noid
+Sending: 4 ID ("name" "imapsync" "version" "2.229" "os" "linux" "vendor" "Gilles LAMIRAL" "support-url" "https://imapsync.lamiral.info/" "date" "14-Sep-2022 18:08:24 +0000" "side" "host2")
+Sent 181 bytes
+Read: 	* ID ("name" "Dovecot")
+  	4 OK ID completed (0.001 + 0.000 secs).
+
+Host2: QUOTA capability found, presented in raw IMAP on next lines
+Sending: 5 GETQUOTAROOT INBOX
+Sent 22 bytes
+Read: 	5 OK No quota (0.001 + 0.000 secs).
+
+Host2: Quota current storage is 0 bytes. Limit is 0 bytes. So 0 % full
+Host1: Compression is off. Use --compress1 to allow compression on host1
+Host2: Compression is off. Use --compress2 to allow compression on host2
+Host1: found 7 folders.
+Host2: found 5 folders.
+Host1: guessing separator from folder listing: [/]
+Host1: separator given by NAMESPACE: [|]
+Host2: guessing separator from folder listing: [.]
+Host2: separator given by NAMESPACE: [.]
+Host1: guessing prefix from folder listing: []
+Host1: prefix given by NAMESPACE: []
+Host2: guessing prefix from folder listing: [INBOX.]
+Host2: prefix given by NAMESPACE: [INBOX.]
+Host1: separator and prefix: [|][]
+Host2: separator and prefix: [.][INBOX.]
+Including all folders found by default. Use --subscribed or --folder or --folderrec or --include to select specific folders. Use --exclude to unselect specific folders.
+Host1: Checking wanted folders exist. Use --nocheckfoldersexist to avoid this check (shared of public namespace targeted).
+Host1: Checking wanted folders are selectable. Use --nocheckselectable to avoid this check.
+Turned off automapping folders ( use --automap to turn on automapping )
+
+++++ Listing folders
+All foldernames are presented between brackets like [X] where X is the foldername.
+When a foldername contains non-ASCII characters it is presented in the form
+[X] = [Y] where
+X is the imap foldername you have to use in command line options and
+Y is the utf8 output just printed for convenience, to recognize it.
+
+Host1: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren \Marked \Drafts) "|" Drafts
+* LIST (\HasNoChildren \Marked \Templates) "|" "Drafts|template"
+* LIST (\HasNoChildren \Unmarked \NoInferiors) "|" INBOX
+* LIST (\HasNoChildren \Unmarked) "|" Outbox
+* LIST (\HasNoChildren \Marked \Sent) "|" Sent
+* LIST (\HasNoChildren \Unmarked \Junk) "|" Spam
+* LIST (\HasNoChildren \Marked \Trash) "|" Trash
+16 OK LIST Completed.
+
+[Drafts]
+[Drafts|template]
+[INBOX]
+[Outbox]
+[Sent]
+[Spam]
+[Trash]
+
+Host2: folders list (first the raw imap format then the [X] = [Y]):
+* LIST (\HasChildren) "." INBOX
+* LIST (\HasNoChildren \UnMarked \Trash) "." INBOX.Trash
+* LIST (\HasNoChildren \UnMarked \Drafts) "." INBOX.Drafts
+* LIST (\HasNoChildren \UnMarked \Junk) "." INBOX.Spam
+* LIST (\HasNoChildren \UnMarked \Sent) "." INBOX.Sent
+10 OK List completed (0.001 + 0.000 secs).
+
+[INBOX]
+[INBOX.Drafts]
+[INBOX.Sent]
+[INBOX.Spam]
+[INBOX.Trash]
+
+Checking SEARCH ALL works on both accounts. To avoid that check, use --nochecknoabletosearch
+Host1: checking if SEARCH ALL works on INBOX
+Host1: folder [INBOX] has 206 messages mentioned by SELECT
+Host1: folder [INBOX] has 206 messages found by SEARCH ALL
+Host1: folder [INBOX] has the same messages count (206) by SELECT and SEARCH ALL
+Host2: checking if SEARCH ALL works on INBOX
+Host2: folder [INBOX] has 0 messages mentioned by SELECT
+Host2: folder [INBOX] has 0 messages found by SEARCH ALL
+Host2: folder [INBOX] has the same messages count (0) by SELECT and SEARCH ALL
+Good! SEARCH ALL works on both accounts.
+
+Folders sizes before the synchronization. It can take some time. Be patient.
+You can remove foldersizes listings by using "--nofoldersizes" and "--nofoldersizesatend"
+but then you will also lose the ETA (Estimation Time of Arrival) given after each message copy.
+Host1 folder     1/7 [Drafts]                            Size:  16735876 Messages:    18 Biggest:   4753897
+Host2 folder     1/7 [INBOX.Drafts]                      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -16735876             -18           -4753897
+
+Host1 folder     2/7 [Drafts|template]                   Size:   3652858 Messages:     1 Biggest:   3652858
+Host2 folder     2/7 [INBOX.Drafts.template]              does not exist yet
+Host2-Host1                                                     -3652858              -1           -3652858
+
+Host1 folder     3/7 [INBOX]                             Size:  62063958 Messages:   206 Biggest:   4974643
+Host2 folder     3/7 [INBOX]                             Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -62063958            -206           -4974643
+
+Host1 folder     4/7 [Outbox]                            Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/7 [INBOX.Outbox]                       does not exist yet
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     5/7 [Sent]                              Size: 1333711203 Messages:   522 Biggest:  22329794
+Host2 folder     5/7 [INBOX.Sent]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                    -1333711203            -522          -22329794
+
+Host1 folder     6/7 [Spam]                              Size:         0 Messages:     0 Biggest:         0
+Host2 folder     6/7 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     7/7 [Trash]                             Size:   1293901 Messages:    14 Biggest:    104429
+Host2 folder     7/7 [INBOX.Trash]                       Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                     -1293901             -14            -104429
+
+Host1 Nb folders:                     7 folders
+Host2 Nb folders:                     7 folders
+
+Host1 Nb messages:                  761 messages
+Host2 Nb messages:                    0 messages
+
+Host1 Total size:            1417457796 bytes (1.320 GiB)
+Host2 Total size:                     0 bytes (0.000 KiB)
+
+Host1 Biggest message:         22329794 bytes (21.295 MiB)
+Host2 Biggest message:                0 bytes (0.000 KiB)
+
+Time spent on sizing:        13.0 seconds
+++++ Looping on each one of 7 folders to sync
+ETA: Нядзеля 14 мая 2023-05-14 03:50:16 +0300 +03  0 s  761/761 msgs left
+Folder     1/7 [Drafts]                            -> [INBOX.Drafts]                     
+Host1: folder [Drafts] has 18 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Drafts] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Drafts] permanentflags: 
+Host1: folder [Drafts] considering 18 messages
+Host2: folder [INBOX.Drafts] considering 0 messages
+Host1: folder [Drafts] selected 18 messages, duplicates 0
+Host2: folder [INBOX.Drafts] selected 0 messages, duplicates 0
+msg Drafts/17 {2894574}        copied to INBOX.Drafts/1          0.08 msgs/s  229.277 KiB/s 2.760 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:26:39 +0300 +03  9370 s  760/761 msgs left
+msg Drafts/40 {263554}         copied to INBOX.Drafts/2          0.15 msgs/s  234.440 KiB/s 3.012 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:13:42 +0300 +03  4992 s  759/761 msgs left
+msg Drafts/53 {3167022}        copied to INBOX.Drafts/3          0.11 msgs/s  232.637 KiB/s 6.032 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:42:32 +0300 +03  6709 s  758/761 msgs left
+msg Drafts/59 {4753897}        copied to INBOX.Drafts/4          0.10 msgs/s  263.232 KiB/s 10.566 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:00:36 +0300 +03  7779 s  757/761 msgs left
+msg Drafts/151 {9935}          copied to INBOX.Drafts/5          0.12 msgs/s  262.533 KiB/s 10.575 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:34:54 +0300 +03  6237 s  756/761 msgs left
+msg Drafts/200 {3653743}       copied to INBOX.Drafts/6          0.10 msgs/s  241.793 KiB/s 14.060 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:08 +0300 +03  7493 s  755/761 msgs left
+msg Drafts/211 {9850}          copied to INBOX.Drafts/7          0.12 msgs/s  240.201 KiB/s 14.069 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:38:57 +0300 +03  6461 s  754/761 msgs left
+msg Drafts/298 {3370}          copied to INBOX.Drafts/8          0.13 msgs/s  239.404 KiB/s 14.072 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:25:42 +0300 +03  5666 s  753/761 msgs left
+msg Drafts/307 {1635062}       copied to INBOX.Drafts/9          0.13 msgs/s  238.154 KiB/s 15.632 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:25:00 +0300 +03  5616 s  752/761 msgs left
+msg Drafts/316 {3325}          copied to INBOX.Drafts/10         0.15 msgs/s  237.524 KiB/s 15.635 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:15:46 +0300 +03  5062 s  751/761 msgs left
+msg Drafts/344 {284507}        copied to INBOX.Drafts/11         0.16 msgs/s  235.683 KiB/s 15.906 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:09:57 +0300 +03  4712 s  750/761 msgs left
+msg Drafts/351 {3395}          copied to INBOX.Drafts/12         0.17 msgs/s  235.104 KiB/s 15.909 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:03:31 +0300 +03  4325 s  749/761 msgs left
+msg Drafts/357 {3364}          copied to INBOX.Drafts/13         0.19 msgs/s  234.544 KiB/s 15.913 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:58:03 +0300 +03  3997 s  748/761 msgs left
+msg Drafts/383 {3357}          copied to INBOX.Drafts/14         0.20 msgs/s  233.836 KiB/s 15.916 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:53:25 +0300 +03  3719 s  747/761 msgs left
+msg Drafts/392 {3496}          copied to INBOX.Drafts/15         0.21 msgs/s  233.246 KiB/s 15.919 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:49:22 +0300 +03  3476 s  746/761 msgs left
+msg Drafts/407 {31585}         copied to INBOX.Drafts/16         0.23 msgs/s  231.375 KiB/s 15.949 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:46:14 +0300 +03  3287 s  745/761 msgs left
+msg Drafts/412 {3408}          copied to INBOX.Drafts/17         0.24 msgs/s  229.617 KiB/s 15.953 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:43:21 +0300 +03  3114 s  744/761 msgs left
+msg Drafts/439 {8432}          copied to INBOX.Drafts/18         0.25 msgs/s  228.968 KiB/s 15.961 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:40:34 +0300 +03  2946 s  743/761 msgs left
+ETA: Нядзеля 14 мая 2023-05-14 04:40:34 +0300 +03  2946 s  743/761 msgs left
+Folder     2/7 [Drafts|template]                   -> [INBOX.Drafts.template]            
+Host1: folder [Drafts|template] has 1 messages in total (mentioned by SELECT)
+Creating folder [INBOX.Drafts.template] on host2
+Created folder [INBOX.Drafts.template] on host2
+Host2: folder [INBOX.Drafts.template] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Drafts.template] permanentflags: 
+Host2: Subscribing to folder INBOX.Drafts.template
+Host1: folder [Drafts|template] considering 1 messages
+Host2: folder [INBOX.Drafts.template] considering 0 messages
+Host1: folder [Drafts|template] selected 1 messages, duplicates 0
+Host2: folder [INBOX.Drafts.template] selected 0 messages, duplicates 0
+msg Drafts|template/1 {3652858}         copied to INBOX.Drafts.template/1          0.22 msgs/s  227.807 KiB/s 19.444 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:48:37 +0300 +03  3413 s  742/761 msgs left
+ETA: Нядзеля 14 мая 2023-05-14 04:48:37 +0300 +03  3413 s  742/761 msgs left
+Folder     3/7 [INBOX]                             -> [INBOX]                            
+Host1: folder [INBOX] has 206 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX] permanentflags: 
+Host2: Subscribing to folder INBOX
+Host1: folder [INBOX] considering 206 messages
+Host2: folder [INBOX] considering 0 messages
+Host1: folder [INBOX] selected 206 messages, duplicates 0
+Host2: folder [INBOX] selected 0 messages, duplicates 0
+msg INBOX/1 {31023}           copied to INBOX/1          0.20 msgs/s  203.160 KiB/s 19.474 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:52:31 +0300 +03  3637 s  741/761 msgs left
+msg INBOX/2 {8713}            copied to INBOX/2          0.21 msgs/s  202.825 KiB/s 19.482 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:49:41 +0300 +03  3466 s  740/761 msgs left
+msg INBOX/3 {11476}           copied to INBOX/3          0.22 msgs/s  202.246 KiB/s 19.493 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:47:10 +0300 +03  3315 s  739/761 msgs left
+msg INBOX/4 {14398}           copied to INBOX/4          0.23 msgs/s  202.053 KiB/s 19.507 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:44:47 +0300 +03  3172 s  738/761 msgs left
+msg INBOX/5 {11714}           copied to INBOX/5          0.24 msgs/s  201.925 KiB/s 19.518 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:42:35 +0300 +03  3039 s  737/761 msgs left
+msg INBOX/6 {26103}           copied to INBOX/6          0.25 msgs/s  201.180 KiB/s 19.543 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:40:44 +0300 +03  2928 s  736/761 msgs left
+msg INBOX/7 {30448}           copied to INBOX/7          0.26 msgs/s  200.908 KiB/s 19.572 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:38:56 +0300 +03  2820 s  735/761 msgs left
+msg INBOX/8 {1949622}         copied to INBOX/8          0.25 msgs/s  204.218 KiB/s 21.431 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:40:45 +0300 +03  2921 s  734/761 msgs left
+msg INBOX/9 {30949}           copied to INBOX/9          0.26 msgs/s  204.121 KiB/s 21.461 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:39:02 +0300 +03  2818 s  733/761 msgs left
+msg INBOX/10 {14460}          copied to INBOX/10         0.27 msgs/s  203.895 KiB/s 21.474 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:37:26 +0300 +03  2722 s  732/761 msgs left
+msg INBOX/11 {205536}         copied to INBOX/11         0.28 msgs/s  204.162 KiB/s 21.671 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:36:13 +0300 +03  2648 s  731/761 msgs left
+msg INBOX/12 {697854}         copied to INBOX/12         0.28 msgs/s  205.143 KiB/s 22.336 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:35:53 +0300 +03  2625 s  730/761 msgs left
+msg INBOX/13 {2580}           copied to INBOX/13         0.29 msgs/s  204.773 KiB/s 22.338 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:34:33 +0300 +03  2545 s  729/761 msgs left
+msg INBOX/14 {12769}          copied to INBOX/14         0.29 msgs/s  204.016 KiB/s 22.351 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:33:23 +0300 +03  2475 s  728/761 msgs left
+msg INBOX/15 {35607}          copied to INBOX/15         0.30 msgs/s  203.893 KiB/s 22.385 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:32:13 +0300 +03  2404 s  727/761 msgs left
+msg INBOX/16 {19581}          copied to INBOX/16         0.31 msgs/s  203.785 KiB/s 22.403 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:31:04 +0300 +03  2335 s  726/761 msgs left
+msg INBOX/17 {17525}          copied to INBOX/17         0.32 msgs/s  202.646 KiB/s 22.420 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:30:11 +0300 +03  2282 s  725/761 msgs left
+msg INBOX/18 {12971}          copied to INBOX/18         0.33 msgs/s  202.479 KiB/s 22.432 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:29:10 +0300 +03  2220 s  724/761 msgs left
+msg INBOX/19 {26793}          copied to INBOX/19         0.33 msgs/s  202.357 KiB/s 22.458 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:28:12 +0300 +03  2162 s  723/761 msgs left
+msg INBOX/20 {22362}          copied to INBOX/20         0.34 msgs/s  202.289 KiB/s 22.479 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:27:17 +0300 +03  2107 s  722/761 msgs left
+msg INBOX/21 {5478}           copied to INBOX/21         0.35 msgs/s  202.075 KiB/s 22.484 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:26:24 +0300 +03  2054 s  721/761 msgs left
+msg INBOX/22 {151636}         copied to INBOX/22         0.36 msgs/s  201.500 KiB/s 22.629 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:51 +0300 +03  2019 s  720/761 msgs left
+msg INBOX/23 {358787}         copied to INBOX/23         0.36 msgs/s  201.144 KiB/s 22.971 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:35 +0300 +03  2002 s  719/761 msgs left
+msg INBOX/24 {441570}         copied to INBOX/24         0.36 msgs/s  200.565 KiB/s 23.392 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:30 +0300 +03  1994 s  718/761 msgs left
+msg INBOX/25 {58241}          copied to INBOX/25         0.37 msgs/s  200.525 KiB/s 23.448 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:47 +0300 +03  1951 s  717/761 msgs left
+msg INBOX/26 {47324}          copied to INBOX/26         0.38 msgs/s  200.485 KiB/s 23.493 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:06 +0300 +03  1909 s  716/761 msgs left
+msg INBOX/27 {276961}         copied to INBOX/27         0.38 msgs/s  200.789 KiB/s 23.757 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:41 +0300 +03  1883 s  715/761 msgs left
+msg INBOX/28 {42544}          copied to INBOX/28         0.39 msgs/s  200.787 KiB/s 23.798 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:01 +0300 +03  1844 s  714/761 msgs left
+msg INBOX/29 {133709}         copied to INBOX/29         0.39 msgs/s  200.827 KiB/s 23.925 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:30 +0300 +03  1812 s  713/761 msgs left
+msg INBOX/30 {321355}         copied to INBOX/30         0.39 msgs/s  197.104 KiB/s 24.232 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:51 +0300 +03  1829 s  712/761 msgs left
+msg INBOX/33 {12849}          copied to INBOX/31         0.40 msgs/s  196.820 KiB/s 24.244 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:16 +0300 +03  1794 s  711/761 msgs left
+msg INBOX/34 {4161}           copied to INBOX/32         0.40 msgs/s  196.561 KiB/s 24.248 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:41 +0300 +03  1759 s  710/761 msgs left
+msg INBOX/35 {1370376}        copied to INBOX/33         0.38 msgs/s  191.519 KiB/s 25.555 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:36 +0300 +03  1863 s  709/761 msgs left
+msg INBOX/36 {105204}         copied to INBOX/34         0.38 msgs/s  190.809 KiB/s 25.655 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:13 +0300 +03  1839 s  708/761 msgs left
+msg INBOX/37 {47708}          copied to INBOX/35         0.39 msgs/s  190.714 KiB/s 25.701 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:41 +0300 +03  1807 s  707/761 msgs left
+msg INBOX/38 {306399}         copied to INBOX/36         0.39 msgs/s  190.985 KiB/s 25.993 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:25 +0300 +03  1789 s  706/761 msgs left
+msg INBOX/39 {79115}          copied to INBOX/37         0.40 msgs/s  190.781 KiB/s 26.068 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:58 +0300 +03  1761 s  705/761 msgs left
+msg INBOX/40 {289399}         copied to INBOX/38         0.40 msgs/s  190.785 KiB/s 26.344 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:44 +0300 +03  1746 s  704/761 msgs left
+msg INBOX/41 {27841}          copied to INBOX/39         0.41 msgs/s  190.621 KiB/s 26.371 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:15 +0300 +03  1717 s  703/761 msgs left
+msg INBOX/42 {3102385}        copied to INBOX/40         0.36 msgs/s  181.466 KiB/s 29.330 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:51 +0300 +03  1969 s  702/761 msgs left
+msg INBOX/43 {372243}         copied to INBOX/41         0.36 msgs/s  180.565 KiB/s 29.685 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:52 +0300 +03  1967 s  701/761 msgs left
+msg INBOX/44 {270828}         copied to INBOX/42         0.36 msgs/s  180.638 KiB/s 29.943 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:34 +0300 +03  1948 s  700/761 msgs left
+msg INBOX/45 {451941}         copied to INBOX/43         0.36 msgs/s  180.170 KiB/s 30.374 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:35 +0300 +03  1946 s  699/761 msgs left
+msg INBOX/46 {8859}           copied to INBOX/44         0.36 msgs/s  180.022 KiB/s 30.382 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:04 +0300 +03  1915 s  698/761 msgs left
+msg INBOX/47 {3611}           copied to INBOX/45         0.37 msgs/s  179.836 KiB/s 30.386 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:34 +0300 +03  1884 s  697/761 msgs left
+msg INBOX/48 {18968}          copied to INBOX/46         0.38 msgs/s  179.701 KiB/s 30.404 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:05 +0300 +03  1855 s  696/761 msgs left
+msg INBOX/49 {82433}          copied to INBOX/47         0.38 msgs/s  179.622 KiB/s 30.482 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:40 +0300 +03  1830 s  695/761 msgs left
+msg INBOX/50 {886054}         copied to INBOX/48         0.37 msgs/s  179.359 KiB/s 31.327 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:08 +0300 +03  1853 s  694/761 msgs left
+msg INBOX/51 {4132}           copied to INBOX/49         0.38 msgs/s  178.929 KiB/s 31.331 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:43 +0300 +03  1827 s  693/761 msgs left
+msg INBOX/52 {351482}         copied to INBOX/50         0.38 msgs/s  178.371 KiB/s 31.667 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:41 +0300 +03  1823 s  692/761 msgs left
+msg INBOX/54 {1560765}        copied to INBOX/51         0.37 msgs/s  178.128 KiB/s 33.155 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:48 +0300 +03  1881 s  691/761 msgs left
+msg INBOX/55 {41665}          copied to INBOX/52         0.37 msgs/s  177.800 KiB/s 33.195 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:25 +0300 +03  1858 s  690/761 msgs left
+msg INBOX/56 {5311}           copied to INBOX/53         0.38 msgs/s  177.661 KiB/s 33.200 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:59 +0300 +03  1831 s  689/761 msgs left
+msg INBOX/57 {3854}           copied to INBOX/54         0.38 msgs/s  177.493 KiB/s 33.204 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:33 +0300 +03  1805 s  688/761 msgs left
+msg INBOX/58 {35077}          copied to INBOX/55         0.38 msgs/s  176.936 KiB/s 33.237 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:14 +0300 +03  1786 s  687/761 msgs left
+msg INBOX/59 {31859}          copied to INBOX/56         0.39 msgs/s  176.437 KiB/s 33.267 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:55 +0300 +03  1766 s  686/761 msgs left
+msg INBOX/60 {146237}         copied to INBOX/57         0.39 msgs/s  175.783 KiB/s 33.407 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:45 +0300 +03  1754 s  685/761 msgs left
+msg INBOX/61 {353209}         copied to INBOX/58         0.39 msgs/s  175.509 KiB/s 33.744 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:42 +0300 +03  1749 s  684/761 msgs left
+msg INBOX/63 {6376}           copied to INBOX/59         0.40 msgs/s  175.350 KiB/s 33.750 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:19 +0300 +03  1726 s  683/761 msgs left
+msg INBOX/64 {30984}          copied to INBOX/60         0.40 msgs/s  175.113 KiB/s 33.779 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:59 +0300 +03  1705 s  682/761 msgs left
+msg INBOX/66 {291124}         copied to INBOX/61         0.40 msgs/s  173.601 KiB/s 34.057 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:07 +0300 +03  1710 s  681/761 msgs left
+msg INBOX/67 {111279}         copied to INBOX/62         0.40 msgs/s  173.623 KiB/s 34.163 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:49 +0300 +03  1692 s  680/761 msgs left
+msg INBOX/68 {49601}          copied to INBOX/63         0.41 msgs/s  173.549 KiB/s 34.210 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:30 +0300 +03  1671 s  679/761 msgs left
+msg INBOX/69 {28162}          copied to INBOX/64         0.41 msgs/s  173.358 KiB/s 34.237 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:11 +0300 +03  1652 s  678/761 msgs left
+msg INBOX/70 {526509}         copied to INBOX/65         0.41 msgs/s  172.081 KiB/s 34.739 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:29 +0300 +03  1666 s  677/761 msgs left
+msg INBOX/71 {11276}          copied to INBOX/66         0.41 msgs/s  171.734 KiB/s 34.750 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:11 +0300 +03  1648 s  676/761 msgs left
+msg INBOX/72 {19547}          copied to INBOX/67         0.41 msgs/s  171.672 KiB/s 34.769 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:52 +0300 +03  1628 s  675/761 msgs left
+msg INBOX/73 {17755}          copied to INBOX/68         0.42 msgs/s  171.626 KiB/s 34.786 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:32 +0300 +03  1608 s  674/761 msgs left
+msg INBOX/74 {24528}          copied to INBOX/69         0.42 msgs/s  171.522 KiB/s 34.809 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:13 +0300 +03  1589 s  673/761 msgs left
+msg INBOX/75 {12380}          copied to INBOX/70         0.43 msgs/s  171.423 KiB/s 34.821 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:55 +0300 +03  1571 s  672/761 msgs left
+msg INBOX/76 {5865}           copied to INBOX/71         0.43 msgs/s  171.293 KiB/s 34.826 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:37 +0300 +03  1552 s  671/761 msgs left
+msg INBOX/77 {50981}          copied to INBOX/72         0.44 msgs/s  170.740 KiB/s 34.875 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:25 +0300 +03  1540 s  670/761 msgs left
+msg INBOX/78 {36753}          copied to INBOX/73         0.44 msgs/s  170.354 KiB/s 34.910 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:12 +0300 +03  1526 s  669/761 msgs left
+msg INBOX/79 {497939}         copied to INBOX/74         0.44 msgs/s  170.170 KiB/s 35.385 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:19 +0300 +03  1529 s  668/761 msgs left
+msg INBOX/80 {1697472}        copied to INBOX/75         0.43 msgs/s  171.408 KiB/s 37.004 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:06 +0300 +03  1569 s  667/761 msgs left
+msg INBOX/81 {1665900}        copied to INBOX/76         0.41 msgs/s  172.134 KiB/s 38.593 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:55 +0300 +03  1609 s  666/761 msgs left
+msg INBOX/82 {1684380}        copied to INBOX/77         0.41 msgs/s  174.733 KiB/s 40.199 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:24 +0300 +03  1632 s  665/761 msgs left
+msg INBOX/83 {4284}           copied to INBOX/78         0.41 msgs/s  174.350 KiB/s 40.203 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:09 +0300 +03  1616 s  664/761 msgs left
+msg INBOX/84 {43231}          copied to INBOX/79         0.41 msgs/s  174.137 KiB/s 40.244 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:54 +0300 +03  1601 s  663/761 msgs left
+msg INBOX/85 {189214}         copied to INBOX/80         0.41 msgs/s  173.155 KiB/s 40.425 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:54 +0300 +03  1599 s  662/761 msgs left
+msg INBOX/86 {61702}          copied to INBOX/81         0.42 msgs/s  172.496 KiB/s 40.484 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:45 +0300 +03  1589 s  661/761 msgs left
+msg INBOX/87 {49451}          copied to INBOX/82         0.42 msgs/s  172.337 KiB/s 40.531 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:31 +0300 +03  1574 s  660/761 msgs left
+msg INBOX/88 {28298}          copied to INBOX/83         0.42 msgs/s  172.000 KiB/s 40.558 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:18 +0300 +03  1560 s  659/761 msgs left
+msg INBOX/90 {37800}          copied to INBOX/84         0.43 msgs/s  171.692 KiB/s 40.594 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:05 +0300 +03  1547 s  658/761 msgs left
+msg INBOX/91 {10987}          copied to INBOX/85         0.43 msgs/s  171.348 KiB/s 40.604 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:52 +0300 +03  1533 s  657/761 msgs left
+msg INBOX/92 {55299}          copied to INBOX/86         0.43 msgs/s  170.939 KiB/s 40.657 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:42 +0300 +03  1522 s  656/761 msgs left
+msg INBOX/93 {43659}          copied to INBOX/87         0.43 msgs/s  170.846 KiB/s 40.699 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:28 +0300 +03  1507 s  655/761 msgs left
+msg INBOX/94 {76168}          copied to INBOX/88         0.44 msgs/s  170.779 KiB/s 40.771 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:15 +0300 +03  1494 s  654/761 msgs left
+msg INBOX/95 {13535}          copied to INBOX/89         0.44 msgs/s  170.295 KiB/s 40.784 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:04 +0300 +03  1483 s  653/761 msgs left
+msg INBOX/96 {10872}          copied to INBOX/90         0.44 msgs/s  170.224 KiB/s 40.794 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:50 +0300 +03  1468 s  652/761 msgs left
+msg INBOX/97 {582294}         copied to INBOX/91         0.44 msgs/s  169.201 KiB/s 41.350 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:08 +0300 +03  1481 s  651/761 msgs left
+msg INBOX/98 {727589}         copied to INBOX/92         0.44 msgs/s  170.013 KiB/s 42.044 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:12 +0300 +03  1483 s  650/761 msgs left
+msg INBOX/99 {873064}         copied to INBOX/93         0.43 msgs/s  170.494 KiB/s 42.876 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:26 +0300 +03  1492 s  649/761 msgs left
+msg INBOX/100 {1017769}       copied to INBOX/94         0.43 msgs/s  170.036 KiB/s 43.847 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:55 +0300 +03  1514 s  648/761 msgs left
+msg INBOX/101 {1161524}       copied to INBOX/95         0.42 msgs/s  170.823 KiB/s 44.955 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:15 +0300 +03  1529 s  647/761 msgs left
+msg INBOX/102 {1224262}       copied to INBOX/96         0.42 msgs/s  172.322 KiB/s 46.122 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:30 +0300 +03  1540 s  646/761 msgs left
+msg INBOX/103 {5747}          copied to INBOX/97         0.42 msgs/s  172.199 KiB/s 46.128 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:16 +0300 +03  1525 s  645/761 msgs left
+msg INBOX/104 {67595}         copied to INBOX/98         0.43 msgs/s  172.162 KiB/s 46.192 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:03 +0300 +03  1512 s  644/761 msgs left
+msg INBOX/105 {11321}         copied to INBOX/99         0.43 msgs/s  172.103 KiB/s 46.203 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:49 +0300 +03  1498 s  643/761 msgs left
+msg INBOX/106 {398608}        copied to INBOX/100        0.43 msgs/s  172.135 KiB/s 46.583 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:48 +0300 +03  1495 s  642/761 msgs left
+msg INBOX/107 {26620}         copied to INBOX/101        0.43 msgs/s  172.100 KiB/s 46.608 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:35 +0300 +03  1481 s  641/761 msgs left
+msg INBOX/108 {361783}        copied to INBOX/102        0.43 msgs/s  171.098 KiB/s 46.953 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:44 +0300 +03  1486 s  640/761 msgs left
+msg INBOX/109 {326358}        copied to INBOX/103        0.43 msgs/s  170.928 KiB/s 47.265 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:43 +0300 +03  1483 s  639/761 msgs left
+msg INBOX/110 {320186}        copied to INBOX/104        0.43 msgs/s  171.093 KiB/s 47.570 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:38 +0300 +03  1477 s  638/761 msgs left
+msg INBOX/113 {13175}         copied to INBOX/105        0.43 msgs/s  170.900 KiB/s 47.583 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:26 +0300 +03  1465 s  637/761 msgs left
+msg INBOX/114 {36608}         copied to INBOX/106        0.44 msgs/s  170.793 KiB/s 47.618 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:14 +0300 +03  1453 s  636/761 msgs left
+msg INBOX/115 {52320}         copied to INBOX/107        0.44 msgs/s  170.736 KiB/s 47.667 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:03 +0300 +03  1441 s  635/761 msgs left
+msg INBOX/116 {5316}          copied to INBOX/108        0.44 msgs/s  170.633 KiB/s 47.672 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:51 +0300 +03  1428 s  634/761 msgs left
+msg INBOX/117 {6414}          copied to INBOX/109        0.45 msgs/s  170.513 KiB/s 47.679 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:39 +0300 +03  1416 s  633/761 msgs left
+msg INBOX/118 {5861}          copied to INBOX/110        0.45 msgs/s  170.410 KiB/s 47.684 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:27 +0300 +03  1404 s  632/761 msgs left
+msg INBOX/119 {118603}        copied to INBOX/111        0.45 msgs/s  170.409 KiB/s 47.797 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:18 +0300 +03  1394 s  631/761 msgs left
+msg INBOX/120 {9360}          copied to INBOX/112        0.46 msgs/s  170.324 KiB/s 47.806 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:06 +0300 +03  1382 s  630/761 msgs left
+msg INBOX/121 {262515}        copied to INBOX/113        0.46 msgs/s  170.154 KiB/s 48.057 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:04 +0300 +03  1378 s  629/761 msgs left
+msg INBOX/122 {9690}          copied to INBOX/114        0.46 msgs/s  170.077 KiB/s 48.066 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:52 +0300 +03  1366 s  628/761 msgs left
+msg INBOX/123 {15013}         copied to INBOX/115        0.46 msgs/s  170.013 KiB/s 48.080 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:41 +0300 +03  1355 s  627/761 msgs left
+msg INBOX/124 {21221}         copied to INBOX/116        0.47 msgs/s  169.955 KiB/s 48.100 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:30 +0300 +03  1344 s  626/761 msgs left
+msg INBOX/125 {146041}        copied to INBOX/117        0.47 msgs/s  169.548 KiB/s 48.240 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:27 +0300 +03  1339 s  625/761 msgs left
+msg INBOX/126 {288581}        copied to INBOX/118        0.47 msgs/s  169.467 KiB/s 48.515 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:25 +0300 +03  1335 s  624/761 msgs left
+msg INBOX/127 {433014}        copied to INBOX/119        0.47 msgs/s  169.895 KiB/s 48.928 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:23 +0300 +03  1331 s  623/761 msgs left
+msg INBOX/128 {67338}         copied to INBOX/120        0.47 msgs/s  169.640 KiB/s 48.992 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:15 +0300 +03  1323 s  622/761 msgs left
+msg INBOX/129 {14439}         copied to INBOX/121        0.47 msgs/s  169.571 KiB/s 49.006 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:05 +0300 +03  1313 s  621/761 msgs left
+msg INBOX/130 {352543}        copied to INBOX/122        0.47 msgs/s  169.566 KiB/s 49.342 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:05 +0300 +03  1310 s  620/761 msgs left
+msg INBOX/131 {61307}         copied to INBOX/123        0.48 msgs/s  169.402 KiB/s 49.400 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:57 +0300 +03  1302 s  619/761 msgs left
+msg INBOX/132 {12252}         copied to INBOX/124        0.48 msgs/s  169.328 KiB/s 49.412 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:47 +0300 +03  1291 s  618/761 msgs left
+msg INBOX/133 {415077}        copied to INBOX/125        0.48 msgs/s  169.730 KiB/s 49.808 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:44 +0300 +03  1288 s  617/761 msgs left
+msg INBOX/134 {31050}         copied to INBOX/126        0.48 msgs/s  169.637 KiB/s 49.838 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:35 +0300 +03  1278 s  616/761 msgs left
+msg INBOX/135 {350218}        copied to INBOX/127        0.48 msgs/s  169.668 KiB/s 50.172 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:35 +0300 +03  1275 s  615/761 msgs left
+msg INBOX/136 {1049178}       copied to INBOX/128        0.48 msgs/s  169.642 KiB/s 51.172 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:55 +0300 +03  1290 s  614/761 msgs left
+msg INBOX/137 {10979}         copied to INBOX/129        0.48 msgs/s  169.489 KiB/s 51.183 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:46 +0300 +03  1281 s  613/761 msgs left
+msg INBOX/138 {21525}         copied to INBOX/130        0.48 msgs/s  169.440 KiB/s 51.203 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:37 +0300 +03  1271 s  612/761 msgs left
+msg INBOX/139 {8404}          copied to INBOX/131        0.48 msgs/s  169.383 KiB/s 51.211 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:27 +0300 +03  1261 s  611/761 msgs left
+msg INBOX/140 {1219668}       copied to INBOX/132        0.48 msgs/s  170.705 KiB/s 52.374 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:40 +0300 +03  1269 s  610/761 msgs left
+msg INBOX/141 {8729}          copied to INBOX/133        0.48 msgs/s  170.625 KiB/s 52.383 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:30 +0300 +03  1260 s  609/761 msgs left
+msg INBOX/142 {8401}          copied to INBOX/134        0.49 msgs/s  170.563 KiB/s 52.391 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:21 +0300 +03  1250 s  608/761 msgs left
+msg INBOX/143 {85518}         copied to INBOX/135        0.49 msgs/s  169.918 KiB/s 52.472 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:19 +0300 +03  1246 s  607/761 msgs left
+msg INBOX/144 {10272}         copied to INBOX/136        0.49 msgs/s  169.744 KiB/s 52.482 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:11 +0300 +03  1238 s  606/761 msgs left
+msg INBOX/145 {96122}         copied to INBOX/137        0.49 msgs/s  169.488 KiB/s 52.574 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:06 +0300 +03  1232 s  605/761 msgs left
+msg INBOX/146 {338260}        copied to INBOX/138        0.49 msgs/s  169.805 KiB/s 52.896 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:03 +0300 +03  1227 s  604/761 msgs left
+msg INBOX/147 {109744}        copied to INBOX/139        0.49 msgs/s  169.819 KiB/s 53.001 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:56 +0300 +03  1220 s  603/761 msgs left
+msg INBOX/148 {8366}          copied to INBOX/140        0.50 msgs/s  169.509 KiB/s 53.009 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:49 +0300 +03  1212 s  602/761 msgs left
+msg INBOX/149 {12680}         copied to INBOX/141        0.50 msgs/s  169.458 KiB/s 53.021 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:40 +0300 +03  1203 s  601/761 msgs left
+msg INBOX/150 {8398}          copied to INBOX/142        0.50 msgs/s  169.398 KiB/s 53.029 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:32 +0300 +03  1195 s  600/761 msgs left
+msg INBOX/151 {10358}         copied to INBOX/143        0.51 msgs/s  169.309 KiB/s 53.039 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:23 +0300 +03  1186 s  599/761 msgs left
+msg INBOX/152 {187418}        copied to INBOX/144        0.51 msgs/s  169.285 KiB/s 53.218 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:19 +0300 +03  1181 s  598/761 msgs left
+msg INBOX/153 {4997}          copied to INBOX/145        0.51 msgs/s  169.219 KiB/s 53.222 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:11 +0300 +03  1172 s  597/761 msgs left
+msg INBOX/154 {43401}         copied to INBOX/146        0.51 msgs/s  169.237 KiB/s 53.264 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:15:03 +0300 +03  1164 s  596/761 msgs left
+msg INBOX/155 {225246}        copied to INBOX/147        0.51 msgs/s  169.634 KiB/s 53.479 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:56 +0300 +03  1157 s  595/761 msgs left
+msg INBOX/156 {8412}          copied to INBOX/148        0.52 msgs/s  169.583 KiB/s 53.487 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:48 +0300 +03  1149 s  594/761 msgs left
+msg INBOX/159 {5983}          copied to INBOX/149        0.52 msgs/s  169.503 KiB/s 53.492 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:40 +0300 +03  1141 s  593/761 msgs left
+msg INBOX/160 {2190}          copied to INBOX/150        0.52 msgs/s  169.432 KiB/s 53.494 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:32 +0300 +03  1133 s  592/761 msgs left
+msg INBOX/161 {4920}          copied to INBOX/151        0.53 msgs/s  169.369 KiB/s 53.499 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:24 +0300 +03  1124 s  591/761 msgs left
+msg INBOX/162 {123632}        copied to INBOX/152        0.53 msgs/s  169.552 KiB/s 53.617 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:17 +0300 +03  1117 s  590/761 msgs left
+msg INBOX/163 {484847}        copied to INBOX/153        0.53 msgs/s  169.996 KiB/s 54.079 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:18 +0300 +03  1116 s  589/761 msgs left
+msg INBOX/164 {5669}          copied to INBOX/154        0.53 msgs/s  169.823 KiB/s 54.085 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:11 +0300 +03  1108 s  588/761 msgs left
+msg INBOX/165 {67594}         copied to INBOX/155        0.53 msgs/s  169.710 KiB/s 54.149 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:05 +0300 +03  1102 s  587/761 msgs left
+msg INBOX/166 {8770}          copied to INBOX/156        0.54 msgs/s  169.652 KiB/s 54.158 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:58 +0300 +03  1095 s  586/761 msgs left
+msg INBOX/167 {145969}        copied to INBOX/157        0.54 msgs/s  169.335 KiB/s 54.297 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:56 +0300 +03  1091 s  585/761 msgs left
+msg INBOX/168 {27733}         copied to INBOX/158        0.54 msgs/s  169.279 KiB/s 54.323 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:49 +0300 +03  1084 s  584/761 msgs left
+msg INBOX/169 {29927}         copied to INBOX/159        0.54 msgs/s  169.278 KiB/s 54.352 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:42 +0300 +03  1077 s  583/761 msgs left
+msg INBOX/170 {96209}         copied to INBOX/160        0.54 msgs/s  169.254 KiB/s 54.444 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:37 +0300 +03  1071 s  582/761 msgs left
+msg INBOX/171 {26574}         copied to INBOX/161        0.55 msgs/s  169.027 KiB/s 54.469 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:31 +0300 +03  1065 s  581/761 msgs left
+msg INBOX/172 {30162}         copied to INBOX/162        0.55 msgs/s  168.864 KiB/s 54.498 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:26 +0300 +03  1059 s  580/761 msgs left
+msg INBOX/173 {63571}         copied to INBOX/163        0.55 msgs/s  168.815 KiB/s 54.558 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:20 +0300 +03  1053 s  579/761 msgs left
+msg INBOX/174 {35683}         copied to INBOX/164        0.55 msgs/s  168.807 KiB/s 54.592 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:13 +0300 +03  1046 s  578/761 msgs left
+msg INBOX/175 {54383}         copied to INBOX/165        0.55 msgs/s  168.450 KiB/s 54.644 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:10 +0300 +03  1042 s  577/761 msgs left
+msg INBOX/176 {68154}         copied to INBOX/166        0.55 msgs/s  167.976 KiB/s 54.709 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:08 +0300 +03  1038 s  576/761 msgs left
+msg INBOX/177 {4222}          copied to INBOX/167        0.56 msgs/s  167.918 KiB/s 54.713 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:01 +0300 +03  1031 s  575/761 msgs left
+msg INBOX/178 {4141}          copied to INBOX/168        0.56 msgs/s  167.822 KiB/s 54.717 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:55 +0300 +03  1025 s  574/761 msgs left
+msg INBOX/179 {26024}         copied to INBOX/169        0.56 msgs/s  167.763 KiB/s 54.742 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:49 +0300 +03  1018 s  573/761 msgs left
+msg INBOX/180 {674463}        copied to INBOX/170        0.56 msgs/s  167.347 KiB/s 55.385 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:13:01 +0300 +03  1026 s  572/761 msgs left
+msg INBOX/181 {18073}         copied to INBOX/171        0.56 msgs/s  167.309 KiB/s 55.403 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:54 +0300 +03  1019 s  571/761 msgs left
+msg INBOX/183 {10024}         copied to INBOX/172        0.56 msgs/s  167.235 KiB/s 55.412 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:48 +0300 +03  1013 s  570/761 msgs left
+msg INBOX/184 {537262}        copied to INBOX/173        0.56 msgs/s  167.603 KiB/s 55.924 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:51 +0300 +03  1013 s  569/761 msgs left
+msg INBOX/185 {16186}         copied to INBOX/174        0.56 msgs/s  167.582 KiB/s 55.940 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:44 +0300 +03  1006 s  568/761 msgs left
+msg INBOX/186 {613690}        copied to INBOX/175        0.56 msgs/s  166.826 KiB/s 56.525 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:12:57 +0300 +03  1014 s  567/761 msgs left
+msg INBOX/187 {4974643}       copied to INBOX/176        0.53 msgs/s  169.021 KiB/s 61.269 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:25 +0300 +03  1077 s  566/761 msgs left
+msg INBOX/188 {1641978}       copied to INBOX/177        0.51 msgs/s  168.654 KiB/s 62.835 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:14:58 +0300 +03  1100 s  565/761 msgs left
+msg INBOX/189 {4656817}       copied to INBOX/178        0.47 msgs/s  166.043 KiB/s 67.276 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:59 +0300 +03  1188 s  564/761 msgs left
+msg INBOX/190 {7532}          copied to INBOX/179        0.48 msgs/s  165.970 KiB/s 67.284 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:16:52 +0300 +03  1180 s  563/761 msgs left
+msg INBOX/191 {1944794}       copied to INBOX/180        0.47 msgs/s  165.671 KiB/s 69.138 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:31 +0300 +03  1207 s  562/761 msgs left
+msg INBOX/192 {398837}        copied to INBOX/181        0.47 msgs/s  165.939 KiB/s 69.519 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:29 +0300 +03  1203 s  561/761 msgs left
+msg INBOX/193 {14333}         copied to INBOX/182        0.47 msgs/s  165.906 KiB/s 69.532 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:21 +0300 +03  1196 s  560/761 msgs left
+msg INBOX/194 {678240}        copied to INBOX/183        0.46 msgs/s  165.086 KiB/s 70.179 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:36 +0300 +03  1205 s  559/761 msgs left
+msg INBOX/195 {994425}        copied to INBOX/184        0.46 msgs/s  163.367 KiB/s 71.127 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:08 +0300 +03  1225 s  558/761 msgs left
+msg INBOX/196 {1025130}       copied to INBOX/185        0.45 msgs/s  163.878 KiB/s 72.105 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:17 +0300 +03  1230 s  557/761 msgs left
+msg INBOX/197 {121587}        copied to INBOX/186        0.45 msgs/s  163.872 KiB/s 72.221 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:12 +0300 +03  1224 s  556/761 msgs left
+msg INBOX/198 {27405}         copied to INBOX/187        0.46 msgs/s  163.833 KiB/s 72.247 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:04 +0300 +03  1217 s  555/761 msgs left
+msg INBOX/199 {30888}         copied to INBOX/188        0.46 msgs/s  163.763 KiB/s 72.277 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:17:58 +0300 +03  1210 s  554/761 msgs left
+msg INBOX/200 {898129}        copied to INBOX/189        0.45 msgs/s  163.424 KiB/s 73.133 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:13 +0300 +03  1218 s  553/761 msgs left
+msg INBOX/203 {1095020}       copied to INBOX/190        0.45 msgs/s  163.789 KiB/s 74.177 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:25 +0300 +03  1225 s  552/761 msgs left
+msg INBOX/206 {115464}        copied to INBOX/191        0.45 msgs/s  163.642 KiB/s 74.288 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:21 +0300 +03  1220 s  551/761 msgs left
+msg INBOX/211 {74654}         copied to INBOX/192        0.45 msgs/s  163.521 KiB/s 74.359 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:16 +0300 +03  1214 s  550/761 msgs left
+msg INBOX/216 {678305}        copied to INBOX/193        0.45 msgs/s  162.913 KiB/s 75.006 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:29 +0300 +03  1221 s  549/761 msgs left
+msg INBOX/218 {626371}        copied to INBOX/194        0.45 msgs/s  162.598 KiB/s 75.603 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:37 +0300 +03  1225 s  548/761 msgs left
+msg INBOX/220 {873323}        copied to INBOX/195        0.44 msgs/s  161.108 KiB/s 76.436 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:04 +0300 +03  1242 s  547/761 msgs left
+msg INBOX/223 {589088}        copied to INBOX/196        0.44 msgs/s  160.668 KiB/s 76.998 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:13 +0300 +03  1246 s  546/761 msgs left
+msg INBOX/224 {829996}        copied to INBOX/197        0.44 msgs/s  160.863 KiB/s 77.789 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:21 +0300 +03  1249 s  545/761 msgs left
+msg INBOX/229 {703499}        copied to INBOX/198        0.43 msgs/s  159.687 KiB/s 78.460 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:41 +0300 +03  1261 s  544/761 msgs left
+msg INBOX/235 {9768}          copied to INBOX/199        0.43 msgs/s  159.632 KiB/s 78.469 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:33 +0300 +03  1254 s  543/761 msgs left
+msg INBOX/236 {9773}          copied to INBOX/200        0.43 msgs/s  159.415 KiB/s 78.479 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:28 +0300 +03  1248 s  542/761 msgs left
+msg INBOX/237 {8034}          copied to INBOX/201        0.44 msgs/s  159.362 KiB/s 78.486 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:21 +0300 +03  1240 s  541/761 msgs left
+msg INBOX/238 {30748}         copied to INBOX/202        0.44 msgs/s  159.298 KiB/s 78.516 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:14 +0300 +03  1233 s  540/761 msgs left
+msg INBOX/239 {30752}         copied to INBOX/203        0.44 msgs/s  159.207 KiB/s 78.545 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:08 +0300 +03  1227 s  539/761 msgs left
+msg INBOX/240 {30749}         copied to INBOX/204        0.44 msgs/s  158.981 KiB/s 78.574 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:19:03 +0300 +03  1221 s  538/761 msgs left
+msg INBOX/241 {30752}         copied to INBOX/205        0.44 msgs/s  158.836 KiB/s 78.604 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:58 +0300 +03  1215 s  537/761 msgs left
+msg INBOX/242 {30752}         copied to INBOX/206        0.44 msgs/s  158.764 KiB/s 78.633 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:18:52 +0300 +03  1208 s  536/761 msgs left
+ETA: Нядзеля 14 мая 2023-05-14 04:18:52 +0300 +03  1208 s  536/761 msgs left
+Folder     4/7 [Outbox]                            -> [INBOX.Outbox]                     
+Host1: folder [Outbox] has 0 messages in total (mentioned by SELECT)
+Creating folder [INBOX.Outbox] on host2
+Created folder [INBOX.Outbox] on host2
+Host2: folder [INBOX.Outbox] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Outbox] permanentflags: 
+Host1: folder [Outbox] considering 0 messages
+Host2: folder [INBOX.Outbox] considering 0 messages
+Host1: folder [Outbox] selected 0 messages, duplicates 0
+Host2: folder [INBOX.Outbox] selected 0 messages, duplicates 0
+ETA: Нядзеля 14 мая 2023-05-14 04:18:53 +0300 +03  1209 s  536/761 msgs left
+Folder     5/7 [Sent]                              -> [INBOX.Sent]                       
+Host1: folder [Sent] has 522 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Sent] permanentflags: 
+Host1: folder [Sent] considering 522 messages
+Host2: folder [INBOX.Sent] considering 0 messages
+Host1: folder [Sent] selected 522 messages, duplicates 0
+Host2: folder [INBOX.Sent] selected 0 messages, duplicates 0
+msg Sent/1 {5043}            copied to INBOX.Sent/1          0.41 msgs/s  147.540 KiB/s 78.638 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:54 +0300 +03  1292 s  535/761 msgs left
+msg Sent/2 {5570}            copied to INBOX.Sent/2          0.42 msgs/s  147.439 KiB/s 78.643 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:20:47 +0300 +03  1285 s  534/761 msgs left
+msg Sent/3 {2893392}         copied to INBOX.Sent/3          0.40 msgs/s  146.893 KiB/s 81.402 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:21:50 +0300 +03  1327 s  533/761 msgs left
+msg Sent/4 {2897376}         copied to INBOX.Sent/4          0.39 msgs/s  145.494 KiB/s 84.166 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:23:05 +0300 +03  1376 s  532/761 msgs left
+msg Sent/5 {4694}            copied to INBOX.Sent/5          0.39 msgs/s  145.467 KiB/s 84.170 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:57 +0300 +03  1368 s  531/761 msgs left
+msg Sent/7 {7315}            copied to INBOX.Sent/6          0.39 msgs/s  145.426 KiB/s 84.177 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:22:49 +0300 +03  1360 s  530/761 msgs left
+msg Sent/8 {2894775}         copied to INBOX.Sent/7          0.37 msgs/s  143.261 KiB/s 86.938 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:15 +0300 +03  1417 s  529/761 msgs left
+msg Sent/9 {12389}           copied to INBOX.Sent/8          0.37 msgs/s  143.151 KiB/s 86.950 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:24:08 +0300 +03  1409 s  528/761 msgs left
+msg Sent/10 {4399013}        copied to INBOX.Sent/9          0.36 msgs/s  142.215 KiB/s 91.145 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:51 +0300 +03  1478 s  527/761 msgs left
+msg Sent/11 {6374}           copied to INBOX.Sent/10         0.36 msgs/s  142.189 KiB/s 91.151 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:42 +0300 +03  1469 s  526/761 msgs left
+msg Sent/12 {9939}           copied to INBOX.Sent/11         0.36 msgs/s  142.161 KiB/s 91.160 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:34 +0300 +03  1461 s  525/761 msgs left
+msg Sent/13 {6544}           copied to INBOX.Sent/12         0.36 msgs/s  142.121 KiB/s 91.167 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:25:26 +0300 +03  1452 s  524/761 msgs left
+msg Sent/14 {2894211}        copied to INBOX.Sent/13         0.35 msgs/s  139.594 KiB/s 93.927 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:26:59 +0300 +03  1514 s  523/761 msgs left
+msg Sent/15 {2894111}        copied to INBOX.Sent/14         0.34 msgs/s  139.269 KiB/s 96.687 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:28:00 +0300 +03  1553 s  522/761 msgs left
+msg Sent/16 {2894359}        copied to INBOX.Sent/15         0.32 msgs/s  137.309 KiB/s 99.447 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:29:28 +0300 +03  1610 s  521/761 msgs left
+msg Sent/17 {5361}           copied to INBOX.Sent/16         0.32 msgs/s  137.284 KiB/s 99.452 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:29:19 +0300 +03  1601 s  520/761 msgs left
+msg Sent/18 {7378}           copied to INBOX.Sent/17         0.33 msgs/s  137.063 KiB/s 99.459 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:29:13 +0300 +03  1594 s  519/761 msgs left
+msg Sent/19 {1949264}        copied to INBOX.Sent/18         0.32 msgs/s  135.609 KiB/s 101.318 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:30:12 +0300 +03  1631 s  518/761 msgs left
+msg Sent/20 {3166889}        copied to INBOX.Sent/19         0.31 msgs/s  135.443 KiB/s 104.338 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:31:17 +0300 +03  1671 s  517/761 msgs left
+msg Sent/21 {3168364}        copied to INBOX.Sent/20         0.30 msgs/s  133.520 KiB/s 107.360 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:32:54 +0300 +03  1734 s  516/761 msgs left
+msg Sent/22 {3168810}        copied to INBOX.Sent/21         0.29 msgs/s  133.473 KiB/s 110.382 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:33:56 +0300 +03  1773 s  515/761 msgs left
+msg Sent/23 {4987}           copied to INBOX.Sent/22         0.29 msgs/s  133.423 KiB/s 110.387 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:33:47 +0300 +03  1763 s  514/761 msgs left
+msg Sent/24 {8315}           copied to INBOX.Sent/23         0.29 msgs/s  133.358 KiB/s 110.395 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:33:37 +0300 +03  1753 s  513/761 msgs left
+msg Sent/25 {3168350}        copied to INBOX.Sent/24         0.28 msgs/s  131.585 KiB/s 113.416 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:35:14 +0300 +03  1815 s  512/761 msgs left
+msg Sent/26 {5215447}        copied to INBOX.Sent/25         0.27 msgs/s  131.108 KiB/s 118.390 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:37:11 +0300 +03  1890 s  511/761 msgs left
+msg Sent/27 {5911316}        copied to INBOX.Sent/26         0.26 msgs/s  129.870 KiB/s 124.028 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:39:41 +0300 +03  1987 s  510/761 msgs left
+msg Sent/28 {4934687}        copied to INBOX.Sent/27         0.24 msgs/s  128.062 KiB/s 128.734 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:42:05 +0300 +03  2079 s  509/761 msgs left
+msg Sent/29 {3167963}        copied to INBOX.Sent/28         0.24 msgs/s  127.746 KiB/s 131.755 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:43:13 +0300 +03  2121 s  508/761 msgs left
+msg Sent/30 {3168322}        copied to INBOX.Sent/29         0.23 msgs/s  127.663 KiB/s 134.776 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:44:15 +0300 +03  2158 s  507/761 msgs left
+msg Sent/31 {3168285}        copied to INBOX.Sent/30         0.23 msgs/s  127.499 KiB/s 137.798 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:45:19 +0300 +03  2196 s  506/761 msgs left
+msg Sent/32 {3168779}        copied to INBOX.Sent/31         0.22 msgs/s  126.721 KiB/s 140.820 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:46:39 +0300 +03  2245 s  505/761 msgs left
+msg Sent/33 {3168430}        copied to INBOX.Sent/32         0.22 msgs/s  125.597 KiB/s 143.841 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:48:09 +0300 +03  2300 s  504/761 msgs left
+msg Sent/34 {3168528}        copied to INBOX.Sent/33         0.21 msgs/s  124.768 KiB/s 146.863 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:49:32 +0300 +03  2350 s  503/761 msgs left
+msg Sent/35 {3168261}        copied to INBOX.Sent/34         0.21 msgs/s  124.525 KiB/s 149.885 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:50:38 +0300 +03  2389 s  502/761 msgs left
+msg Sent/36 {5973}           copied to INBOX.Sent/35         0.21 msgs/s  124.506 KiB/s 149.890 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:50:25 +0300 +03  2375 s  501/761 msgs left
+msg Sent/37 {5816}           copied to INBOX.Sent/36         0.21 msgs/s  124.490 KiB/s 149.896 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:50:11 +0300 +03  2362 s  500/761 msgs left
+msg Sent/38 {5953}           copied to INBOX.Sent/37         0.21 msgs/s  124.471 KiB/s 149.902 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:49:58 +0300 +03  2349 s  499/761 msgs left
+msg Sent/39 {3168907}        copied to INBOX.Sent/38         0.21 msgs/s  124.748 KiB/s 152.924 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:50:49 +0300 +03  2377 s  498/761 msgs left
+msg Sent/40 {3168795}        copied to INBOX.Sent/39         0.21 msgs/s  124.744 KiB/s 155.946 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:51:46 +0300 +03  2410 s  497/761 msgs left
+msg Sent/41 {4751800}        copied to INBOX.Sent/40         0.20 msgs/s  125.081 KiB/s 160.477 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:53:09 +0300 +03  2459 s  496/761 msgs left
+msg Sent/42 {3168669}        copied to INBOX.Sent/41         0.20 msgs/s  125.113 KiB/s 163.499 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:54:05 +0300 +03  2490 s  495/761 msgs left
+msg Sent/43 {3168327}        copied to INBOX.Sent/42         0.20 msgs/s  125.303 KiB/s 166.521 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:54:55 +0300 +03  2518 s  494/761 msgs left
+msg Sent/44 {3168621}        copied to INBOX.Sent/43         0.19 msgs/s  125.412 KiB/s 169.543 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:55:47 +0300 +03  2547 s  493/761 msgs left
+msg Sent/45 {3168826}        copied to INBOX.Sent/44         0.19 msgs/s  125.191 KiB/s 172.565 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:56:49 +0300 +03  2582 s  492/761 msgs left
+msg Sent/46 {3168488}        copied to INBOX.Sent/45         0.19 msgs/s  124.830 KiB/s 175.586 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:57:56 +0300 +03  2619 s  491/761 msgs left
+msg Sent/47 {3368858}        copied to INBOX.Sent/46         0.18 msgs/s  123.816 KiB/s 178.799 MiB copied ETA: Нядзеля 14 мая 2023-05-14 04:59:29 +0300 +03  2674 s  490/761 msgs left
+msg Sent/48 {3168680}        copied to INBOX.Sent/47         0.18 msgs/s  123.375 KiB/s 181.821 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:00:38 +0300 +03  2713 s  489/761 msgs left
+msg Sent/49 {3168974}        copied to INBOX.Sent/48         0.18 msgs/s  122.738 KiB/s 184.843 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:01:55 +0300 +03  2757 s  488/761 msgs left
+msg Sent/50 {10671}          copied to INBOX.Sent/49         0.18 msgs/s  122.675 KiB/s 184.853 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:01:42 +0300 +03  2743 s  487/761 msgs left
+msg Sent/51 {3168427}        copied to INBOX.Sent/50         0.17 msgs/s  121.982 KiB/s 187.875 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:03:01 +0300 +03  2787 s  486/761 msgs left
+msg Sent/52 {3168669}        copied to INBOX.Sent/51         0.17 msgs/s  122.689 KiB/s 190.897 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:03:29 +0300 +03  2800 s  485/761 msgs left
+msg Sent/53 {1560392}        copied to INBOX.Sent/52         0.17 msgs/s  122.974 KiB/s 192.385 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:03:37 +0300 +03  2799 s  484/761 msgs left
+msg Sent/54 {3168989}        copied to INBOX.Sent/53         0.17 msgs/s  122.554 KiB/s 195.407 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:04:46 +0300 +03  2837 s  483/761 msgs left
+msg Sent/55 {3168412}        copied to INBOX.Sent/54         0.17 msgs/s  122.705 KiB/s 198.429 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:05:33 +0300 +03  2861 s  482/761 msgs left
+msg Sent/56 {3168600}        copied to INBOX.Sent/55         0.17 msgs/s  122.120 KiB/s 201.451 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:06:47 +0300 +03  2902 s  481/761 msgs left
+msg Sent/57 {3168382}        copied to INBOX.Sent/56         0.16 msgs/s  122.048 KiB/s 204.472 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:07:42 +0300 +03  2930 s  480/761 msgs left
+msg Sent/58 {3168537}        copied to INBOX.Sent/57         0.16 msgs/s  123.319 KiB/s 207.494 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:07:46 +0300 +03  2927 s  479/761 msgs left
+msg Sent/59 {3168513}        copied to INBOX.Sent/58         0.16 msgs/s  122.955 KiB/s 210.516 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:08:51 +0300 +03  2961 s  478/761 msgs left
+msg Sent/60 {3168422}        copied to INBOX.Sent/59         0.16 msgs/s  122.804 KiB/s 213.537 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:09:48 +0300 +03  2991 s  477/761 msgs left
+msg Sent/61 {3168273}        copied to INBOX.Sent/60         0.16 msgs/s  122.978 KiB/s 216.559 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:10:31 +0300 +03  3012 s  476/761 msgs left
+msg Sent/62 {3168301}        copied to INBOX.Sent/61         0.16 msgs/s  122.486 KiB/s 219.580 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:11:41 +0300 +03  3049 s  475/761 msgs left
+msg Sent/63 {3168982}        copied to INBOX.Sent/62         0.15 msgs/s  122.434 KiB/s 222.603 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:12:33 +0300 +03  3075 s  474/761 msgs left
+msg Sent/64 {3168972}        copied to INBOX.Sent/63         0.15 msgs/s  122.171 KiB/s 225.625 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:13:33 +0300 +03  3106 s  473/761 msgs left
+msg Sent/65 {3168838}        copied to INBOX.Sent/64         0.15 msgs/s  122.051 KiB/s 228.647 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:14:28 +0300 +03  3133 s  472/761 msgs left
+msg Sent/66 {16194}          copied to INBOX.Sent/65         0.15 msgs/s  122.023 KiB/s 228.662 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:14:12 +0300 +03  3117 s  471/761 msgs left
+msg Sent/67 {3170453}        copied to INBOX.Sent/66         0.15 msgs/s  121.690 KiB/s 231.686 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:15:15 +0300 +03  3149 s  470/761 msgs left
+msg Sent/68 {3170844}        copied to INBOX.Sent/67         0.15 msgs/s  121.490 KiB/s 234.710 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:16:12 +0300 +03  3177 s  469/761 msgs left
+msg Sent/69 {3168989}        copied to INBOX.Sent/68         0.15 msgs/s  121.405 KiB/s 237.732 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:17:04 +0300 +03  3203 s  468/761 msgs left
+msg Sent/70 {3168768}        copied to INBOX.Sent/69         0.14 msgs/s  121.548 KiB/s 240.754 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:17:46 +0300 +03  3222 s  467/761 msgs left
+msg Sent/71 {10813}          copied to INBOX.Sent/70         0.15 msgs/s  121.514 KiB/s 240.764 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:17:30 +0300 +03  3205 s  466/761 msgs left
+msg Sent/72 {3167794}        copied to INBOX.Sent/71         0.14 msgs/s  121.356 KiB/s 243.785 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:18:25 +0300 +03  3232 s  465/761 msgs left
+msg Sent/73 {3168383}        copied to INBOX.Sent/72         0.14 msgs/s  121.699 KiB/s 246.807 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:18:57 +0300 +03  3244 s  464/761 msgs left
+msg Sent/74 {3169482}        copied to INBOX.Sent/73         0.14 msgs/s  121.573 KiB/s 249.830 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:19:50 +0300 +03  3269 s  463/761 msgs left
+msg Sent/75 {3168705}        copied to INBOX.Sent/74         0.14 msgs/s  121.307 KiB/s 252.852 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:20:49 +0300 +03  3298 s  462/761 msgs left
+msg Sent/76 {3170058}        copied to INBOX.Sent/75         0.14 msgs/s  121.026 KiB/s 255.875 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:21:48 +0300 +03  3327 s  461/761 msgs left
+msg Sent/77 {3168572}        copied to INBOX.Sent/76         0.14 msgs/s  120.981 KiB/s 258.896 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:22:37 +0300 +03  3349 s  460/761 msgs left
+msg Sent/78 {3168758}        copied to INBOX.Sent/77         0.14 msgs/s  120.745 KiB/s 261.918 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:23:34 +0300 +03  3376 s  459/761 msgs left
+msg Sent/79 {3168131}        copied to INBOX.Sent/78         0.13 msgs/s  120.501 KiB/s 264.940 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:24:31 +0300 +03  3403 s  458/761 msgs left
+msg Sent/80 {3168447}        copied to INBOX.Sent/79         0.13 msgs/s  120.038 KiB/s 267.961 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:25:39 +0300 +03  3436 s  457/761 msgs left
+msg Sent/81 {3169406}        copied to INBOX.Sent/80         0.13 msgs/s  120.072 KiB/s 270.984 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:26:22 +0300 +03  3455 s  456/761 msgs left
+msg Sent/82 {1736449}        copied to INBOX.Sent/81         0.13 msgs/s  120.124 KiB/s 272.640 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:26:36 +0300 +03  3456 s  455/761 msgs left
+msg Sent/83 {3168758}        copied to INBOX.Sent/82         0.13 msgs/s  119.862 KiB/s 275.662 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:27:34 +0300 +03  3483 s  454/761 msgs left
+msg Sent/84 {5167}           copied to INBOX.Sent/83         0.13 msgs/s  119.854 KiB/s 275.667 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:27:16 +0300 +03  3464 s  453/761 msgs left
+msg Sent/85 {3168421}        copied to INBOX.Sent/84         0.13 msgs/s  119.860 KiB/s 278.689 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:28:00 +0300 +03  3483 s  452/761 msgs left
+msg Sent/86 {3168210}        copied to INBOX.Sent/85         0.13 msgs/s  119.740 KiB/s 281.710 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:28:50 +0300 +03  3505 s  451/761 msgs left
+msg Sent/87 {3178858}        copied to INBOX.Sent/86         0.13 msgs/s  119.423 KiB/s 284.742 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:29:51 +0300 +03  3533 s  450/761 msgs left
+msg Sent/88 {5120552}        copied to INBOX.Sent/87         0.13 msgs/s  119.205 KiB/s 289.625 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:31:25 +0300 +03  3580 s  449/761 msgs left
+msg Sent/89 {3168364}        copied to INBOX.Sent/88         0.12 msgs/s  119.334 KiB/s 292.647 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:32:02 +0300 +03  3594 s  448/761 msgs left
+msg Sent/90 {1567451}        copied to INBOX.Sent/89         0.12 msgs/s  119.492 KiB/s 294.141 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:32:05 +0300 +03  3588 s  447/761 msgs left
+msg Sent/91 {3178998}        copied to INBOX.Sent/90         0.12 msgs/s  119.861 KiB/s 297.173 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:32:30 +0300 +03  3595 s  446/761 msgs left
+msg Sent/92 {3181859}        copied to INBOX.Sent/91         0.12 msgs/s  119.863 KiB/s 300.208 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:33:13 +0300 +03  3612 s  445/761 msgs left
+msg Sent/93 {3168664}        copied to INBOX.Sent/92         0.12 msgs/s  119.478 KiB/s 303.229 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:34:15 +0300 +03  3640 s  444/761 msgs left
+msg Sent/94 {12985}          copied to INBOX.Sent/93         0.12 msgs/s  119.472 KiB/s 303.242 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:33:56 +0300 +03  3621 s  443/761 msgs left
+msg Sent/95 {1663030}        copied to INBOX.Sent/94         0.12 msgs/s  119.502 KiB/s 304.828 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:34:08 +0300 +03  3619 s  442/761 msgs left
+msg Sent/96 {3168642}        copied to INBOX.Sent/95         0.12 msgs/s  119.607 KiB/s 307.850 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:34:44 +0300 +03  3632 s  441/761 msgs left
+msg Sent/97 {3168836}        copied to INBOX.Sent/96         0.12 msgs/s  119.708 KiB/s 310.872 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:35:21 +0300 +03  3645 s  440/761 msgs left
+msg Sent/98 {292642}         copied to INBOX.Sent/97         0.12 msgs/s  119.695 KiB/s 311.151 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:35:07 +0300 +03  3629 s  439/761 msgs left
+msg Sent/99 {436691}         copied to INBOX.Sent/98         0.12 msgs/s  119.696 KiB/s 311.567 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:34:56 +0300 +03  3614 s  438/761 msgs left
+msg Sent/100 {3169454}       copied to INBOX.Sent/99         0.12 msgs/s  119.557 KiB/s 314.590 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:35:45 +0300 +03  3634 s  437/761 msgs left
+msg Sent/101 {1592272}       copied to INBOX.Sent/100        0.12 msgs/s  119.658 KiB/s 316.108 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:35:51 +0300 +03  3629 s  436/761 msgs left
+msg Sent/102 {1595124}       copied to INBOX.Sent/101        0.12 msgs/s  119.748 KiB/s 317.630 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:35:57 +0300 +03  3624 s  435/761 msgs left
+msg Sent/103 {3178753}       copied to INBOX.Sent/102        0.12 msgs/s  119.963 KiB/s 320.661 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:36:26 +0300 +03  3633 s  434/761 msgs left
+msg Sent/104 {36113}         copied to INBOX.Sent/103        0.12 msgs/s  119.945 KiB/s 320.696 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:36:09 +0300 +03  3614 s  433/761 msgs left
+msg Sent/105 {3179483}       copied to INBOX.Sent/104        0.12 msgs/s  120.390 KiB/s 323.728 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:36:25 +0300 +03  3616 s  432/761 msgs left
+msg Sent/106 {3182318}       copied to INBOX.Sent/105        0.12 msgs/s  120.626 KiB/s 326.763 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:36:53 +0300 +03  3623 s  431/761 msgs left
+msg Sent/107 {3168691}       copied to INBOX.Sent/106        0.12 msgs/s  120.576 KiB/s 329.785 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:37:35 +0300 +03  3638 s  430/761 msgs left
+msg Sent/108 {3168432}       copied to INBOX.Sent/107        0.12 msgs/s  120.748 KiB/s 332.806 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:38:06 +0300 +03  3647 s  429/761 msgs left
+msg Sent/109 {3169152}       copied to INBOX.Sent/108        0.12 msgs/s  120.715 KiB/s 335.829 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:38:47 +0300 +03  3661 s  428/761 msgs left
+msg Sent/110 {5082650}       copied to INBOX.Sent/109        0.12 msgs/s  120.711 KiB/s 340.676 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:01 +0300 +03  3695 s  427/761 msgs left
+msg Sent/111 {3168682}       copied to INBOX.Sent/110        0.12 msgs/s  121.048 KiB/s 343.698 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:21 +0300 +03  3697 s  426/761 msgs left
+msg Sent/112 {3169779}       copied to INBOX.Sent/111        0.11 msgs/s  121.046 KiB/s 346.721 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:59 +0300 +03  3710 s  425/761 msgs left
+msg Sent/113 {36178}         copied to INBOX.Sent/112        0.11 msgs/s  121.047 KiB/s 346.755 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:40 +0300 +03  3691 s  424/761 msgs left
+msg Sent/114 {47157}         copied to INBOX.Sent/113        0.12 msgs/s  121.021 KiB/s 346.800 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:23 +0300 +03  3672 s  423/761 msgs left
+msg Sent/115 {1586811}       copied to INBOX.Sent/114        0.11 msgs/s  120.905 KiB/s 348.313 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:40:39 +0300 +03  3672 s  422/761 msgs left
+msg Sent/116 {3168413}       copied to INBOX.Sent/115        0.11 msgs/s  120.872 KiB/s 351.335 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:41:18 +0300 +03  3686 s  421/761 msgs left
+msg Sent/117 {3168619}       copied to INBOX.Sent/116        0.11 msgs/s  121.204 KiB/s 354.357 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:41:38 +0300 +03  3687 s  420/761 msgs left
+msg Sent/118 {3169098}       copied to INBOX.Sent/117        0.11 msgs/s  120.804 KiB/s 357.379 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:42:37 +0300 +03  3711 s  419/761 msgs left
+msg Sent/119 {3169067}       copied to INBOX.Sent/118        0.11 msgs/s  120.612 KiB/s 360.401 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:43:25 +0300 +03  3729 s  418/761 msgs left
+msg Sent/120 {3169340}       copied to INBOX.Sent/119        0.11 msgs/s  120.072 KiB/s 363.424 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:44:33 +0300 +03  3757 s  417/761 msgs left
+msg Sent/121 {3168534}       copied to INBOX.Sent/120        0.11 msgs/s  120.303 KiB/s 366.446 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:44:57 +0300 +03  3761 s  416/761 msgs left
+msg Sent/122 {3172202}       copied to INBOX.Sent/121        0.11 msgs/s  120.199 KiB/s 369.471 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:45:39 +0300 +03  3775 s  415/761 msgs left
+msg Sent/123 {3175166}       copied to INBOX.Sent/122        0.11 msgs/s  120.323 KiB/s 372.499 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:46:09 +0300 +03  3782 s  414/761 msgs left
+msg Sent/124 {3177984}       copied to INBOX.Sent/123        0.11 msgs/s  120.474 KiB/s 375.530 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:46:36 +0300 +03  3788 s  413/761 msgs left
+msg Sent/125 {3168837}       copied to INBOX.Sent/124        0.11 msgs/s  120.789 KiB/s 378.552 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:46:54 +0300 +03  3789 s  412/761 msgs left
+msg Sent/126 {1519425}       copied to INBOX.Sent/125        0.11 msgs/s  120.741 KiB/s 380.001 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:47:04 +0300 +03  3784 s  411/761 msgs left
+msg Sent/127 {3168417}       copied to INBOX.Sent/126        0.11 msgs/s  120.919 KiB/s 383.022 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:47:29 +0300 +03  3789 s  410/761 msgs left
+msg Sent/128 {3168536}       copied to INBOX.Sent/127        0.11 msgs/s  120.842 KiB/s 386.044 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:48:09 +0300 +03  3801 s  409/761 msgs left
+msg Sent/129 {3168723}       copied to INBOX.Sent/128        0.11 msgs/s  120.920 KiB/s 389.066 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:48:39 +0300 +03  3808 s  408/761 msgs left
+msg Sent/130 {11553}         copied to INBOX.Sent/129        0.11 msgs/s  120.915 KiB/s 389.077 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:48:20 +0300 +03  3788 s  407/761 msgs left
+msg Sent/131 {3168750}       copied to INBOX.Sent/130        0.11 msgs/s  120.858 KiB/s 392.099 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:48:58 +0300 +03  3799 s  406/761 msgs left
+msg Sent/132 {3209089}       copied to INBOX.Sent/131        0.11 msgs/s  120.415 KiB/s 395.160 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:50:00 +0300 +03  3823 s  405/761 msgs left
+msg Sent/133 {3169008}       copied to INBOX.Sent/132        0.11 msgs/s  120.483 KiB/s 398.182 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:50:30 +0300 +03  3830 s  404/761 msgs left
+msg Sent/134 {3205945}       copied to INBOX.Sent/133        0.11 msgs/s  120.597 KiB/s 401.239 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:50:58 +0300 +03  3835 s  403/761 msgs left
+msg Sent/135 {47015}         copied to INBOX.Sent/134        0.11 msgs/s  120.586 KiB/s 401.284 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:50:40 +0300 +03  3816 s  402/761 msgs left
+msg Sent/136 {3206114}       copied to INBOX.Sent/135        0.10 msgs/s  120.708 KiB/s 404.342 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:51:07 +0300 +03  3821 s  401/761 msgs left
+msg Sent/137 {3168364}       copied to INBOX.Sent/136        0.10 msgs/s  120.981 KiB/s 407.363 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:51:25 +0300 +03  3820 s  400/761 msgs left
+msg Sent/138 {3169571}       copied to INBOX.Sent/137        0.10 msgs/s  121.188 KiB/s 410.386 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:51:46 +0300 +03  3822 s  399/761 msgs left
+msg Sent/139 {3205708}       copied to INBOX.Sent/138        0.10 msgs/s  120.998 KiB/s 413.443 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:52:32 +0300 +03  3836 s  398/761 msgs left
+msg Sent/140 {3206526}       copied to INBOX.Sent/139        0.10 msgs/s  121.243 KiB/s 416.501 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:52:51 +0300 +03  3837 s  397/761 msgs left
+msg Sent/141 {7601502}       copied to INBOX.Sent/140        0.10 msgs/s  121.029 KiB/s 423.750 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:54:51 +0300 +03  3890 s  396/761 msgs left
+msg Sent/142 {3168497}       copied to INBOX.Sent/141        0.10 msgs/s  120.893 KiB/s 426.772 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:55:33 +0300 +03  3901 s  395/761 msgs left
+msg Sent/143 {3206122}       copied to INBOX.Sent/142        0.10 msgs/s  120.276 KiB/s 429.830 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:44 +0300 +03  3929 s  394/761 msgs left
+msg Sent/144 {8836}          copied to INBOX.Sent/143        0.10 msgs/s  120.271 KiB/s 429.838 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:24 +0300 +03  3908 s  393/761 msgs left
+msg Sent/145 {1556637}       copied to INBOX.Sent/144        0.10 msgs/s  120.319 KiB/s 431.323 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:27 +0300 +03  3900 s  392/761 msgs left
+msg Sent/146 {1615835}       copied to INBOX.Sent/145        0.10 msgs/s  120.312 KiB/s 432.864 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:34 +0300 +03  3893 s  391/761 msgs left
+msg Sent/147 {1544635}       copied to INBOX.Sent/146        0.10 msgs/s  120.470 KiB/s 434.337 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:29 +0300 +03  3881 s  390/761 msgs left
+msg Sent/148 {1697876}       copied to INBOX.Sent/147        0.10 msgs/s  120.496 KiB/s 435.956 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:56:35 +0300 +03  3874 s  389/761 msgs left
+msg Sent/149 {3205546}       copied to INBOX.Sent/148        0.10 msgs/s  120.386 KiB/s 439.013 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:57:15 +0300 +03  3884 s  388/761 msgs left
+msg Sent/150 {1523571}       copied to INBOX.Sent/149        0.10 msgs/s  120.416 KiB/s 440.466 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:57:18 +0300 +03  3876 s  387/761 msgs left
+msg Sent/151 {3205768}       copied to INBOX.Sent/150        0.10 msgs/s  120.283 KiB/s 443.523 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:57:59 +0300 +03  3887 s  386/761 msgs left
+msg Sent/152 {3131036}       copied to INBOX.Sent/151        0.10 msgs/s  119.678 KiB/s 446.509 MiB copied ETA: Нядзеля 14 мая 2023-05-14 05:59:09 +0300 +03  3912 s  385/761 msgs left
+msg Sent/153 {3205828}       copied to INBOX.Sent/152        0.10 msgs/s  119.356 KiB/s 449.567 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:00:02 +0300 +03  3929 s  384/761 msgs left
+msg Sent/154 {3205776}       copied to INBOX.Sent/153        0.10 msgs/s  119.270 KiB/s 452.624 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:00:40 +0300 +03  3937 s  383/761 msgs left
+msg Sent/155 {3205578}       copied to INBOX.Sent/154        0.10 msgs/s  119.529 KiB/s 455.681 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:00:55 +0300 +03  3935 s  382/761 msgs left
+msg Sent/156 {3205808}       copied to INBOX.Sent/155        0.10 msgs/s  119.540 KiB/s 458.738 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:01:26 +0300 +03  3940 s  381/761 msgs left
+msg Sent/157 {3205766}       copied to INBOX.Sent/156        0.10 msgs/s  119.168 KiB/s 461.795 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:02:22 +0300 +03  3958 s  380/761 msgs left
+msg Sent/158 {3173266}       copied to INBOX.Sent/157        0.10 msgs/s  118.997 KiB/s 464.822 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:03:05 +0300 +03  3969 s  379/761 msgs left
+msg Sent/159 {4786}          copied to INBOX.Sent/158        0.10 msgs/s  118.991 KiB/s 464.826 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:02:44 +0300 +03  3948 s  378/761 msgs left
+msg Sent/160 {4918}          copied to INBOX.Sent/159        0.10 msgs/s  118.951 KiB/s 464.831 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:02:26 +0300 +03  3929 s  377/761 msgs left
+msg Sent/161 {3206006}       copied to INBOX.Sent/160        0.10 msgs/s  119.099 KiB/s 467.888 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:02:48 +0300 +03  3929 s  376/761 msgs left
+msg Sent/162 {3206565}       copied to INBOX.Sent/161        0.10 msgs/s  118.900 KiB/s 470.946 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:03:33 +0300 +03  3940 s  375/761 msgs left
+msg Sent/163 {3218205}       copied to INBOX.Sent/162        0.09 msgs/s  118.785 KiB/s 474.016 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:04:12 +0300 +03  3949 s  374/761 msgs left
+msg Sent/164 {290684}        copied to INBOX.Sent/163        0.09 msgs/s  118.739 KiB/s 474.293 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:03:59 +0300 +03  3932 s  373/761 msgs left
+msg Sent/165 {5136530}       copied to INBOX.Sent/164        0.09 msgs/s  118.859 KiB/s 479.191 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:04:53 +0300 +03  3948 s  372/761 msgs left
+msg Sent/166 {3205729}       copied to INBOX.Sent/165        0.09 msgs/s  118.883 KiB/s 482.249 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:05:22 +0300 +03  3951 s  371/761 msgs left
+msg Sent/167 {5909235}       copied to INBOX.Sent/166        0.09 msgs/s  114.918 KiB/s 487.884 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:11:18 +0300 +03  4114 s  370/761 msgs left
+msg Sent/168 {3206165}       copied to INBOX.Sent/167        0.09 msgs/s  114.302 KiB/s 490.942 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:12:35 +0300 +03  4140 s  369/761 msgs left
+msg Sent/169 {6187905}       copied to INBOX.Sent/168        0.09 msgs/s  110.488 KiB/s 496.843 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:18:53 +0300 +03  4312 s  368/761 msgs left
+msg Sent/170 {1535511}       copied to INBOX.Sent/169        0.09 msgs/s  110.320 KiB/s 498.307 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:19:10 +0300 +03  4308 s  367/761 msgs left
+msg Sent/171 {18105}         copied to INBOX.Sent/170        0.09 msgs/s  110.316 KiB/s 498.325 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:18:48 +0300 +03  4286 s  366/761 msgs left
+msg Sent/172 {3205941}       copied to INBOX.Sent/171        0.08 msgs/s  109.828 KiB/s 501.382 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:00 +0300 +03  4309 s  365/761 msgs left
+msg Sent/173 {3205702}       copied to INBOX.Sent/172        0.08 msgs/s  109.470 KiB/s 504.439 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:21:01 +0300 +03  4326 s  364/761 msgs left
+msg Sent/174 {5567}          copied to INBOX.Sent/173        0.08 msgs/s  109.466 KiB/s 504.445 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:39 +0300 +03  4304 s  363/761 msgs left
+msg Sent/175 {1563374}       copied to INBOX.Sent/174        0.08 msgs/s  109.348 KiB/s 505.936 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:53 +0300 +03  4299 s  362/761 msgs left
+msg Sent/176 {16572}         copied to INBOX.Sent/175        0.08 msgs/s  109.333 KiB/s 505.951 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:32 +0300 +03  4277 s  361/761 msgs left
+msg Sent/177 {4732}          copied to INBOX.Sent/176        0.08 msgs/s  109.330 KiB/s 505.956 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:10 +0300 +03  4254 s  360/761 msgs left
+msg Sent/178 {1757481}       copied to INBOX.Sent/177        0.08 msgs/s  109.053 KiB/s 507.632 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:40 +0300 +03  4257 s  359/761 msgs left
+msg Sent/179 {9581}          copied to INBOX.Sent/178        0.08 msgs/s  109.048 KiB/s 507.641 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:20:18 +0300 +03  4235 s  358/761 msgs left
+msg Sent/180 {3205959}       copied to INBOX.Sent/179        0.08 msgs/s  108.568 KiB/s 510.698 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:21:30 +0300 +03  4256 s  357/761 msgs left
+msg Sent/181 {3205901}       copied to INBOX.Sent/180        0.08 msgs/s  108.094 KiB/s 513.756 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:22:41 +0300 +03  4278 s  356/761 msgs left
+msg Sent/182 {16106}         copied to INBOX.Sent/181        0.08 msgs/s  108.076 KiB/s 513.771 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:22:21 +0300 +03  4256 s  355/761 msgs left
+msg Sent/183 {3221589}       copied to INBOX.Sent/182        0.08 msgs/s  107.637 KiB/s 516.844 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:23:30 +0300 +03  4277 s  354/761 msgs left
+msg Sent/184 {1521056}       copied to INBOX.Sent/183        0.08 msgs/s  107.356 KiB/s 518.294 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:23:57 +0300 +03  4277 s  353/761 msgs left
+msg Sent/185 {2036226}       copied to INBOX.Sent/184        0.08 msgs/s  103.954 KiB/s 520.236 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:29:11 +0300 +03  4410 s  352/761 msgs left
+msg Sent/186 {3654992}       copied to INBOX.Sent/185        0.08 msgs/s  102.906 KiB/s 523.722 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:31:29 +0300 +03  4462 s  351/761 msgs left
+msg Sent/187 {4129905}       copied to INBOX.Sent/186        0.08 msgs/s  100.175 KiB/s 527.660 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:36:43 +0300 +03  4593 s  350/761 msgs left
+msg Sent/188 {3185409}       copied to INBOX.Sent/187        0.08 msgs/s  100.070 KiB/s 530.698 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:37:27 +0300 +03  4600 s  349/761 msgs left
+msg Sent/189 {3654447}       copied to INBOX.Sent/188        0.08 msgs/s  100.033 KiB/s 534.183 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:38:12 +0300 +03  4608 s  348/761 msgs left
+msg Sent/190 {3657335}       copied to INBOX.Sent/189        0.08 msgs/s  99.743 KiB/s 537.671 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:39:23 +0300 +03  4627 s  347/761 msgs left
+msg Sent/191 {7013121}       copied to INBOX.Sent/190        0.07 msgs/s  93.975 KiB/s 544.359 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:51:33 +0300 +03  4945 s  346/761 msgs left
+msg Sent/192 {3752778}       copied to INBOX.Sent/191        0.07 msgs/s  92.033 KiB/s 547.938 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:56:09 +0300 +03  5056 s  345/761 msgs left
+msg Sent/193 {3654922}       copied to INBOX.Sent/192        0.07 msgs/s  91.375 KiB/s 551.424 MiB copied ETA: Нядзеля 14 мая 2023-05-14 06:58:14 +0300 +03  5098 s  344/761 msgs left
+msg Sent/194 {26134583}      copied to INBOX.Sent/193        0.06 msgs/s  85.872 KiB/s 576.348 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:49 +0300 +03  5640 s  343/761 msgs left
+msg Sent/195 {40794482}      copied to INBOX.Sent/194        0.06 msgs/s  83.510 KiB/s 615.253 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:38:38 +0300 +03  6158 s  342/761 msgs left
+msg Sent/196 {1614404}       copied to INBOX.Sent/195        0.06 msgs/s  83.652 KiB/s 616.792 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:38:17 +0300 +03  6130 s  341/761 msgs left
+msg Sent/197 {3654873}       copied to INBOX.Sent/196        0.06 msgs/s  83.958 KiB/s 620.278 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:38:11 +0300 +03  6110 s  340/761 msgs left
+msg Sent/198 {3654651}       copied to INBOX.Sent/197        0.06 msgs/s  84.225 KiB/s 623.763 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:38:12 +0300 +03  6092 s  339/761 msgs left
+msg Sent/199 {1583842}       copied to INBOX.Sent/198        0.06 msgs/s  84.355 KiB/s 625.273 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:37:52 +0300 +03  6065 s  338/761 msgs left
+msg Sent/200 {3654680}       copied to INBOX.Sent/199        0.06 msgs/s  84.603 KiB/s 628.759 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:37:55 +0300 +03  6049 s  337/761 msgs left
+msg Sent/201 {5890}          copied to INBOX.Sent/200        0.06 msgs/s  84.602 KiB/s 628.764 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:37:23 +0300 +03  6017 s  336/761 msgs left
+msg Sent/202 {5361}          copied to INBOX.Sent/201        0.06 msgs/s  84.600 KiB/s 628.770 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:52 +0300 +03  5985 s  335/761 msgs left
+msg Sent/203 {26347}         copied to INBOX.Sent/202        0.06 msgs/s  84.597 KiB/s 628.795 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:21 +0300 +03  5953 s  334/761 msgs left
+msg Sent/204 {1552131}       copied to INBOX.Sent/203        0.06 msgs/s  84.673 KiB/s 630.275 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:09 +0300 +03  5930 s  333/761 msgs left
+msg Sent/205 {3655480}       copied to INBOX.Sent/204        0.06 msgs/s  84.911 KiB/s 633.761 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:14 +0300 +03  5915 s  332/761 msgs left
+msg Sent/206 {3654787}       copied to INBOX.Sent/205        0.06 msgs/s  85.143 KiB/s 637.247 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:20 +0300 +03  5900 s  331/761 msgs left
+msg Sent/207 {3654724}       copied to INBOX.Sent/206        0.06 msgs/s  85.397 KiB/s 640.732 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:22 +0300 +03  5883 s  330/761 msgs left
+msg Sent/208 {3657752}       copied to INBOX.Sent/207        0.06 msgs/s  85.724 KiB/s 644.220 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:36:12 +0300 +03  5861 s  329/761 msgs left
+msg Sent/209 {490835}        copied to INBOX.Sent/208        0.06 msgs/s  85.766 KiB/s 644.688 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:35:44 +0300 +03  5831 s  328/761 msgs left
+msg Sent/210 {1558118}       copied to INBOX.Sent/209        0.06 msgs/s  85.907 KiB/s 646.174 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:35:22 +0300 +03  5803 s  327/761 msgs left
+msg Sent/211 {3654575}       copied to INBOX.Sent/210        0.06 msgs/s  86.187 KiB/s 649.660 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:35:20 +0300 +03  5785 s  326/761 msgs left
+msg Sent/212 {1555168}       copied to INBOX.Sent/211        0.06 msgs/s  86.312 KiB/s 651.143 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:35:00 +0300 +03  5758 s  325/761 msgs left
+msg Sent/213 {3655010}       copied to INBOX.Sent/212        0.06 msgs/s  86.564 KiB/s 654.628 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:35:02 +0300 +03  5741 s  324/761 msgs left
+msg Sent/214 {1691729}       copied to INBOX.Sent/213        0.06 msgs/s  86.682 KiB/s 656.242 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:46 +0300 +03  5717 s  323/761 msgs left
+msg Sent/215 {3654845}       copied to INBOX.Sent/214        0.06 msgs/s  86.885 KiB/s 659.727 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:55 +0300 +03  5703 s  322/761 msgs left
+msg Sent/216 {3655022}       copied to INBOX.Sent/215        0.06 msgs/s  87.159 KiB/s 663.213 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:53 +0300 +03  5685 s  321/761 msgs left
+msg Sent/217 {3614999}       copied to INBOX.Sent/216        0.06 msgs/s  87.422 KiB/s 666.661 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:51 +0300 +03  5666 s  320/761 msgs left
+msg Sent/218 {3658888}       copied to INBOX.Sent/217        0.06 msgs/s  87.720 KiB/s 670.150 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:45 +0300 +03  5646 s  319/761 msgs left
+msg Sent/219 {5431}          copied to INBOX.Sent/218        0.06 msgs/s  87.719 KiB/s 670.155 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:15 +0300 +03  5616 s  318/761 msgs left
+msg Sent/220 {3654653}       copied to INBOX.Sent/219        0.06 msgs/s  87.957 KiB/s 673.640 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:18 +0300 +03  5599 s  317/761 msgs left
+msg Sent/221 {3655062}       copied to INBOX.Sent/220        0.06 msgs/s  88.210 KiB/s 677.126 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:34:19 +0300 +03  5582 s  316/761 msgs left
+msg Sent/222 {288511}        copied to INBOX.Sent/221        0.06 msgs/s  88.228 KiB/s 677.401 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:33:51 +0300 +03  5553 s  315/761 msgs left
+msg Sent/223 {3657953}       copied to INBOX.Sent/222        0.06 msgs/s  88.494 KiB/s 680.890 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:33:50 +0300 +03  5535 s  314/761 msgs left
+msg Sent/224 {6126}          copied to INBOX.Sent/223        0.06 msgs/s  88.492 KiB/s 680.896 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:33:20 +0300 +03  5505 s  313/761 msgs left
+msg Sent/225 {3654737}       copied to INBOX.Sent/224        0.06 msgs/s  88.650 KiB/s 684.381 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:33:35 +0300 +03  5493 s  312/761 msgs left
+msg Sent/226 {8172}          copied to INBOX.Sent/225        0.06 msgs/s  88.649 KiB/s 684.389 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:33:05 +0300 +03  5464 s  311/761 msgs left
+msg Sent/227 {5724}          copied to INBOX.Sent/226        0.06 msgs/s  88.647 KiB/s 684.394 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:36 +0300 +03  5434 s  310/761 msgs left
+msg Sent/228 {31900}         copied to INBOX.Sent/227        0.06 msgs/s  88.648 KiB/s 684.425 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:07 +0300 +03  5405 s  309/761 msgs left
+msg Sent/229 {7977}          copied to INBOX.Sent/228        0.06 msgs/s  88.644 KiB/s 684.432 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:38 +0300 +03  5376 s  308/761 msgs left
+msg Sent/230 {3654722}       copied to INBOX.Sent/229        0.06 msgs/s  88.865 KiB/s 687.918 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:44 +0300 +03  5360 s  307/761 msgs left
+msg Sent/231 {3655045}       copied to INBOX.Sent/230        0.06 msgs/s  89.063 KiB/s 691.404 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:52 +0300 +03  5346 s  306/761 msgs left
+msg Sent/232 {1823530}       copied to INBOX.Sent/231        0.06 msgs/s  89.165 KiB/s 693.143 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:41 +0300 +03  5324 s  305/761 msgs left
+msg Sent/233 {3654723}       copied to INBOX.Sent/232        0.06 msgs/s  89.351 KiB/s 696.628 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:51 +0300 +03  5311 s  304/761 msgs left
+msg Sent/234 {3654816}       copied to INBOX.Sent/233        0.06 msgs/s  89.544 KiB/s 700.113 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:59 +0300 +03  5297 s  303/761 msgs left
+msg Sent/235 {3654786}       copied to INBOX.Sent/234        0.06 msgs/s  89.720 KiB/s 703.599 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:10 +0300 +03  5284 s  302/761 msgs left
+msg Sent/236 {5369657}       copied to INBOX.Sent/235        0.06 msgs/s  89.953 KiB/s 708.720 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:43 +0300 +03  5279 s  301/761 msgs left
+msg Sent/237 {5448}          copied to INBOX.Sent/236        0.06 msgs/s  89.951 KiB/s 708.725 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:15 +0300 +03  5250 s  300/761 msgs left
+msg Sent/238 {3654809}       copied to INBOX.Sent/237        0.06 msgs/s  90.093 KiB/s 712.211 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:30 +0300 +03  5239 s  299/761 msgs left
+msg Sent/239 {3654664}       copied to INBOX.Sent/238        0.06 msgs/s  90.262 KiB/s 715.696 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:42 +0300 +03  5226 s  298/761 msgs left
+msg Sent/240 {3654476}       copied to INBOX.Sent/239        0.06 msgs/s  90.481 KiB/s 719.181 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:45 +0300 +03  5210 s  297/761 msgs left
+msg Sent/241 {1449748}       copied to INBOX.Sent/240        0.06 msgs/s  90.585 KiB/s 720.564 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:27 +0300 +03  5185 s  296/761 msgs left
+msg Sent/242 {1145785}       copied to INBOX.Sent/241        0.06 msgs/s  90.668 KiB/s 721.656 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:32:06 +0300 +03  5160 s  295/761 msgs left
+msg Sent/243 {6060}          copied to INBOX.Sent/242        0.06 msgs/s  90.667 KiB/s 721.662 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:38 +0300 +03  5131 s  294/761 msgs left
+msg Sent/244 {1522996}       copied to INBOX.Sent/243        0.06 msgs/s  90.762 KiB/s 723.115 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:31:22 +0300 +03  5108 s  293/761 msgs left
+msg Sent/245 {11189}         copied to INBOX.Sent/244        0.06 msgs/s  90.755 KiB/s 723.125 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:30:55 +0300 +03  5080 s  292/761 msgs left
+msg Sent/246 {15325}         copied to INBOX.Sent/245        0.06 msgs/s  90.754 KiB/s 723.140 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:30:28 +0300 +03  5052 s  291/761 msgs left
+msg Sent/247 {21400}         copied to INBOX.Sent/246        0.06 msgs/s  90.753 KiB/s 723.160 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:30:00 +0300 +03  5024 s  290/761 msgs left
+msg Sent/248 {2066876}       copied to INBOX.Sent/247        0.06 msgs/s  90.864 KiB/s 725.131 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:29:52 +0300 +03  5004 s  289/761 msgs left
+msg Sent/249 {8185}          copied to INBOX.Sent/248        0.06 msgs/s  90.863 KiB/s 725.139 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:29:24 +0300 +03  4976 s  288/761 msgs left
+msg Sent/250 {21362}         copied to INBOX.Sent/249        0.06 msgs/s  90.862 KiB/s 725.160 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:57 +0300 +03  4948 s  287/761 msgs left
+msg Sent/251 {3654548}       copied to INBOX.Sent/250        0.06 msgs/s  91.110 KiB/s 728.645 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:57 +0300 +03  4931 s  286/761 msgs left
+msg Sent/252 {3654865}       copied to INBOX.Sent/251        0.06 msgs/s  91.284 KiB/s 732.130 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:29:07 +0300 +03  4917 s  285/761 msgs left
+msg Sent/253 {26198}         copied to INBOX.Sent/252        0.06 msgs/s  91.285 KiB/s 732.155 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:39 +0300 +03  4890 s  284/761 msgs left
+msg Sent/254 {3128929}       copied to INBOX.Sent/253        0.06 msgs/s  91.428 KiB/s 735.139 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:45 +0300 +03  4875 s  283/761 msgs left
+msg Sent/255 {3655210}       copied to INBOX.Sent/254        0.06 msgs/s  91.600 KiB/s 738.625 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:55 +0300 +03  4861 s  282/761 msgs left
+msg Sent/256 {432082}        copied to INBOX.Sent/255        0.06 msgs/s  91.618 KiB/s 739.037 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:32 +0300 +03  4836 s  281/761 msgs left
+msg Sent/257 {3654872}       copied to INBOX.Sent/256        0.06 msgs/s  91.863 KiB/s 742.523 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:31 +0300 +03  4818 s  280/761 msgs left
+msg Sent/258 {8013}          copied to INBOX.Sent/257        0.06 msgs/s  91.859 KiB/s 742.531 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:28:05 +0300 +03  4791 s  279/761 msgs left
+msg Sent/259 {4637}          copied to INBOX.Sent/258        0.06 msgs/s  91.858 KiB/s 742.535 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:27:38 +0300 +03  4764 s  278/761 msgs left
+msg Sent/260 {3654691}       copied to INBOX.Sent/259        0.06 msgs/s  92.085 KiB/s 746.020 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:27:40 +0300 +03  4748 s  277/761 msgs left
+msg Sent/261 {10057}         copied to INBOX.Sent/260        0.06 msgs/s  92.076 KiB/s 746.030 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:27:15 +0300 +03  4721 s  276/761 msgs left
+msg Sent/262 {10308}         copied to INBOX.Sent/261        0.06 msgs/s  92.075 KiB/s 746.040 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:26:48 +0300 +03  4695 s  275/761 msgs left
+msg Sent/263 {10254}         copied to INBOX.Sent/262        0.06 msgs/s  92.072 KiB/s 746.050 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:26:22 +0300 +03  4668 s  274/761 msgs left
+msg Sent/264 {6193}          copied to INBOX.Sent/263        0.06 msgs/s  92.070 KiB/s 746.055 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:25:56 +0300 +03  4642 s  273/761 msgs left
+msg Sent/265 {3654439}       copied to INBOX.Sent/264        0.06 msgs/s  92.237 KiB/s 749.541 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:26:06 +0300 +03  4629 s  272/761 msgs left
+msg Sent/266 {3654399}       copied to INBOX.Sent/265        0.06 msgs/s  92.403 KiB/s 753.026 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:26:17 +0300 +03  4615 s  271/761 msgs left
+msg Sent/267 {31175}         copied to INBOX.Sent/266        0.06 msgs/s  92.403 KiB/s 753.055 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:25:51 +0300 +03  4589 s  270/761 msgs left
+msg Sent/268 {36418}         copied to INBOX.Sent/267        0.06 msgs/s  92.403 KiB/s 753.090 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:25:25 +0300 +03  4563 s  269/761 msgs left
+msg Sent/269 {36037}         copied to INBOX.Sent/268        0.06 msgs/s  92.403 KiB/s 753.125 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:59 +0300 +03  4537 s  268/761 msgs left
+msg Sent/270 {3654326}       copied to INBOX.Sent/269        0.06 msgs/s  92.678 KiB/s 756.610 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:54 +0300 +03  4518 s  267/761 msgs left
+msg Sent/271 {1601772}       copied to INBOX.Sent/270        0.06 msgs/s  92.749 KiB/s 758.137 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:45 +0300 +03  4498 s  266/761 msgs left
+msg Sent/272 {35992}         copied to INBOX.Sent/271        0.06 msgs/s  92.746 KiB/s 758.171 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:20 +0300 +03  4472 s  265/761 msgs left
+msg Sent/273 {1590185}       copied to INBOX.Sent/272        0.06 msgs/s  92.831 KiB/s 759.688 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:08 +0300 +03  4451 s  264/761 msgs left
+msg Sent/274 {3654403}       copied to INBOX.Sent/273        0.06 msgs/s  93.089 KiB/s 763.173 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:05 +0300 +03  4434 s  263/761 msgs left
+msg Sent/275 {3654110}       copied to INBOX.Sent/274        0.06 msgs/s  93.336 KiB/s 766.658 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:24:04 +0300 +03  4416 s  262/761 msgs left
+msg Sent/276 {14433}         copied to INBOX.Sent/275        0.06 msgs/s  93.333 KiB/s 766.672 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:39 +0300 +03  4391 s  261/761 msgs left
+msg Sent/277 {5361614}       copied to INBOX.Sent/276        0.06 msgs/s  93.679 KiB/s 771.785 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:51 +0300 +03  4378 s  260/761 msgs left
+msg Sent/278 {23111}         copied to INBOX.Sent/277        0.06 msgs/s  93.673 KiB/s 771.807 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:26 +0300 +03  4353 s  259/761 msgs left
+msg Sent/279 {3654415}       copied to INBOX.Sent/278        0.06 msgs/s  93.955 KiB/s 775.292 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:20 +0300 +03  4334 s  258/761 msgs left
+msg Sent/280 {3654665}       copied to INBOX.Sent/279        0.06 msgs/s  94.144 KiB/s 778.777 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:27 +0300 +03  4319 s  257/761 msgs left
+msg Sent/281 {3654723}       copied to INBOX.Sent/280        0.06 msgs/s  94.366 KiB/s 782.263 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:28 +0300 +03  4303 s  256/761 msgs left
+msg Sent/282 {3657582}       copied to INBOX.Sent/281        0.06 msgs/s  94.514 KiB/s 785.751 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:40 +0300 +03  4290 s  255/761 msgs left
+msg Sent/283 {432371}        copied to INBOX.Sent/282        0.06 msgs/s  94.549 KiB/s 786.163 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:23:16 +0300 +03  4266 s  254/761 msgs left
+msg Sent/284 {23326}         copied to INBOX.Sent/283        0.06 msgs/s  94.537 KiB/s 786.186 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:53 +0300 +03  4241 s  253/761 msgs left
+msg Sent/285 {4859}          copied to INBOX.Sent/284        0.06 msgs/s  94.535 KiB/s 786.190 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:28 +0300 +03  4216 s  252/761 msgs left
+msg Sent/286 {1575377}       copied to INBOX.Sent/285        0.06 msgs/s  94.641 KiB/s 787.693 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:14 +0300 +03  4195 s  251/761 msgs left
+msg Sent/287 {3654318}       copied to INBOX.Sent/286        0.06 msgs/s  94.810 KiB/s 791.178 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:22 +0300 +03  4181 s  250/761 msgs left
+msg Sent/288 {3654292}       copied to INBOX.Sent/287        0.06 msgs/s  94.982 KiB/s 794.663 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:30 +0300 +03  4166 s  249/761 msgs left
+msg Sent/289 {10008}         copied to INBOX.Sent/288        0.06 msgs/s  94.979 KiB/s 794.672 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:06 +0300 +03  4142 s  248/761 msgs left
+msg Sent/290 {1542782}       copied to INBOX.Sent/289        0.06 msgs/s  95.070 KiB/s 796.143 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:52 +0300 +03  4121 s  247/761 msgs left
+msg Sent/291 {3654302}       copied to INBOX.Sent/290        0.06 msgs/s  95.267 KiB/s 799.629 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:57 +0300 +03  4106 s  246/761 msgs left
+msg Sent/292 {3654383}       copied to INBOX.Sent/291        0.06 msgs/s  95.423 KiB/s 803.114 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:07 +0300 +03  4092 s  245/761 msgs left
+msg Sent/293 {3654452}       copied to INBOX.Sent/292        0.06 msgs/s  95.629 KiB/s 806.599 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:10 +0300 +03  4076 s  244/761 msgs left
+msg Sent/294 {3654653}       copied to INBOX.Sent/293        0.06 msgs/s  95.823 KiB/s 810.084 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:14 +0300 +03  4061 s  243/761 msgs left
+msg Sent/295 {3654429}       copied to INBOX.Sent/294        0.06 msgs/s  96.108 KiB/s 813.569 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:07 +0300 +03  4042 s  242/761 msgs left
+msg Sent/296 {9767459}       copied to INBOX.Sent/295        0.06 msgs/s  96.668 KiB/s 822.884 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:53 +0300 +03  4040 s  241/761 msgs left
+msg Sent/297 {3654550}       copied to INBOX.Sent/296        0.06 msgs/s  96.923 KiB/s 826.369 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:49 +0300 +03  4022 s  240/761 msgs left
+msg Sent/298 {40828}         copied to INBOX.Sent/297        0.06 msgs/s  96.924 KiB/s 826.408 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:25 +0300 +03  3998 s  239/761 msgs left
+msg Sent/299 {45749}         copied to INBOX.Sent/298        0.06 msgs/s  96.926 KiB/s 826.452 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:01 +0300 +03  3973 s  238/761 msgs left
+msg Sent/300 {3654655}       copied to INBOX.Sent/299        0.06 msgs/s  97.170 KiB/s 829.937 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:58 +0300 +03  3956 s  237/761 msgs left
+msg Sent/301 {3654380}       copied to INBOX.Sent/300        0.06 msgs/s  97.402 KiB/s 833.422 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:57 +0300 +03  3939 s  236/761 msgs left
+msg Sent/302 {5185440}       copied to INBOX.Sent/301        0.06 msgs/s  97.741 KiB/s 838.368 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:04 +0300 +03  3924 s  235/761 msgs left
+msg Sent/303 {3654289}       copied to INBOX.Sent/302        0.06 msgs/s  97.959 KiB/s 841.853 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:22:04 +0300 +03  3907 s  234/761 msgs left
+msg Sent/304 {781220}        copied to INBOX.Sent/303        0.06 msgs/s  97.986 KiB/s 842.598 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:48 +0300 +03  3886 s  233/761 msgs left
+msg Sent/305 {3654569}       copied to INBOX.Sent/304        0.06 msgs/s  98.173 KiB/s 846.083 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:52 +0300 +03  3870 s  232/761 msgs left
+msg Sent/306 {5308}          copied to INBOX.Sent/305        0.06 msgs/s  98.172 KiB/s 846.088 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:28 +0300 +03  3846 s  231/761 msgs left
+msg Sent/307 {11305}         copied to INBOX.Sent/306        0.06 msgs/s  98.168 KiB/s 846.099 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:05 +0300 +03  3823 s  230/761 msgs left
+msg Sent/308 {10244}         copied to INBOX.Sent/307        0.06 msgs/s  98.167 KiB/s 846.109 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:41 +0300 +03  3799 s  229/761 msgs left
+msg Sent/309 {3654592}       copied to INBOX.Sent/308        0.06 msgs/s  98.363 KiB/s 849.594 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:44 +0300 +03  3783 s  228/761 msgs left
+msg Sent/310 {576848}        copied to INBOX.Sent/309        0.06 msgs/s  98.385 KiB/s 850.144 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:26 +0300 +03  3761 s  227/761 msgs left
+msg Sent/311 {721048}        copied to INBOX.Sent/310        0.06 msgs/s  98.406 KiB/s 850.832 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:10 +0300 +03  3740 s  226/761 msgs left
+msg Sent/312 {863812}        copied to INBOX.Sent/311        0.06 msgs/s  98.448 KiB/s 851.655 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:53 +0300 +03  3719 s  225/761 msgs left
+msg Sent/313 {864517}        copied to INBOX.Sent/312        0.06 msgs/s  98.499 KiB/s 852.480 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:36 +0300 +03  3697 s  224/761 msgs left
+msg Sent/314 {3654460}       copied to INBOX.Sent/313        0.06 msgs/s  98.705 KiB/s 855.965 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:37 +0300 +03  3681 s  223/761 msgs left
+msg Sent/315 {2613083}       copied to INBOX.Sent/314        0.06 msgs/s  98.848 KiB/s 858.457 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:32 +0300 +03  3663 s  222/761 msgs left
+msg Sent/316 {2767156}       copied to INBOX.Sent/315        0.06 msgs/s  99.007 KiB/s 861.096 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:27 +0300 +03  3645 s  221/761 msgs left
+msg Sent/317 {3654322}       copied to INBOX.Sent/316        0.06 msgs/s  99.197 KiB/s 864.581 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:31 +0300 +03  3629 s  220/761 msgs left
+msg Sent/318 {1149300}       copied to INBOX.Sent/317        0.06 msgs/s  99.278 KiB/s 865.677 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:13 +0300 +03  3608 s  219/761 msgs left
+msg Sent/319 {3654336}       copied to INBOX.Sent/318        0.06 msgs/s  99.467 KiB/s 869.162 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:17 +0300 +03  3592 s  218/761 msgs left
+msg Sent/320 {3654828}       copied to INBOX.Sent/319        0.06 msgs/s  99.665 KiB/s 872.648 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:19 +0300 +03  3577 s  217/761 msgs left
+msg Sent/321 {3654580}       copied to INBOX.Sent/320        0.06 msgs/s  99.920 KiB/s 876.133 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:14 +0300 +03  3559 s  216/761 msgs left
+msg Sent/322 {784432}        copied to INBOX.Sent/321        0.06 msgs/s  99.967 KiB/s 876.881 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:56 +0300 +03  3537 s  215/761 msgs left
+msg Sent/323 {787120}        copied to INBOX.Sent/322        0.06 msgs/s  100.007 KiB/s 877.632 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:38 +0300 +03  3516 s  214/761 msgs left
+msg Sent/324 {3654563}       copied to INBOX.Sent/323        0.06 msgs/s  100.215 KiB/s 881.117 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:39 +0300 +03  3499 s  213/761 msgs left
+msg Sent/325 {4075067}       copied to INBOX.Sent/324        0.06 msgs/s  100.377 KiB/s 885.003 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:51 +0300 +03  3486 s  212/761 msgs left
+msg Sent/326 {5384968}       copied to INBOX.Sent/325        0.06 msgs/s  100.585 KiB/s 890.139 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:15 +0300 +03  3477 s  211/761 msgs left
+msg Sent/327 {3654437}       copied to INBOX.Sent/326        0.06 msgs/s  100.727 KiB/s 893.624 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:23 +0300 +03  3462 s  210/761 msgs left
+msg Sent/328 {3654529}       copied to INBOX.Sent/327        0.06 msgs/s  100.935 KiB/s 897.109 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:24 +0300 +03  3446 s  209/761 msgs left
+msg Sent/329 {3655089}       copied to INBOX.Sent/328        0.06 msgs/s  101.065 KiB/s 900.595 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:33 +0300 +03  3432 s  208/761 msgs left
+msg Sent/330 {3654692}       copied to INBOX.Sent/329        0.06 msgs/s  101.226 KiB/s 904.080 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:39 +0300 +03  3417 s  207/761 msgs left
+msg Sent/331 {3654597}       copied to INBOX.Sent/330        0.06 msgs/s  101.345 KiB/s 907.566 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:50 +0300 +03  3404 s  206/761 msgs left
+msg Sent/332 {3654607}       copied to INBOX.Sent/331        0.06 msgs/s  101.502 KiB/s 911.051 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:56 +0300 +03  3389 s  205/761 msgs left
+msg Sent/333 {3654127}       copied to INBOX.Sent/332        0.06 msgs/s  101.615 KiB/s 914.536 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:08 +0300 +03  3375 s  204/761 msgs left
+msg Sent/334 {3654420}       copied to INBOX.Sent/333        0.06 msgs/s  101.741 KiB/s 918.021 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:17 +0300 +03  3361 s  203/761 msgs left
+msg Sent/335 {3654521}       copied to INBOX.Sent/334        0.06 msgs/s  101.866 KiB/s 921.506 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:27 +0300 +03  3347 s  202/761 msgs left
+msg Sent/336 {3654293}       copied to INBOX.Sent/335        0.06 msgs/s  101.990 KiB/s 924.991 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:37 +0300 +03  3333 s  201/761 msgs left
+msg Sent/337 {3654630}       copied to INBOX.Sent/336        0.06 msgs/s  102.216 KiB/s 928.476 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:34 +0300 +03  3316 s  200/761 msgs left
+msg Sent/338 {3654381}       copied to INBOX.Sent/337        0.06 msgs/s  102.313 KiB/s 931.962 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:47 +0300 +03  3303 s  199/761 msgs left
+msg Sent/339 {3654129}       copied to INBOX.Sent/338        0.06 msgs/s  102.405 KiB/s 935.446 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:00 +0300 +03  3290 s  198/761 msgs left
+msg Sent/340 {3654464}       copied to INBOX.Sent/339        0.06 msgs/s  102.567 KiB/s 938.932 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:05 +0300 +03  3274 s  197/761 msgs left
+msg Sent/341 {3654988}       copied to INBOX.Sent/340        0.06 msgs/s  102.649 KiB/s 942.417 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:19 +0300 +03  3261 s  196/761 msgs left
+msg Sent/342 {3379684}       copied to INBOX.Sent/341        0.06 msgs/s  102.839 KiB/s 945.640 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:16 +0300 +03  3244 s  195/761 msgs left
+msg Sent/343 {3654590}       copied to INBOX.Sent/342        0.06 msgs/s  102.995 KiB/s 949.126 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:21 +0300 +03  3229 s  194/761 msgs left
+msg Sent/344 {1608404}       copied to INBOX.Sent/343        0.06 msgs/s  103.071 KiB/s 950.660 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:10 +0300 +03  3209 s  193/761 msgs left
+msg Sent/345 {1729024}       copied to INBOX.Sent/344        0.06 msgs/s  103.105 KiB/s 952.308 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:06 +0300 +03  3191 s  192/761 msgs left
+msg Sent/346 {6681}          copied to INBOX.Sent/345        0.06 msgs/s  103.099 KiB/s 952.315 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:44 +0300 +03  3169 s  191/761 msgs left
+msg Sent/347 {1989848}       copied to INBOX.Sent/346        0.06 msgs/s  103.203 KiB/s 954.213 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:35 +0300 +03  3150 s  190/761 msgs left
+msg Sent/348 {4946}          copied to INBOX.Sent/347        0.06 msgs/s  103.200 KiB/s 954.217 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:13 +0300 +03  3128 s  189/761 msgs left
+msg Sent/349 {3654256}       copied to INBOX.Sent/348        0.06 msgs/s  103.355 KiB/s 957.702 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:18 +0300 +03  3113 s  188/761 msgs left
+msg Sent/350 {3654734}       copied to INBOX.Sent/349        0.06 msgs/s  103.560 KiB/s 961.188 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:17 +0300 +03  3096 s  187/761 msgs left
+msg Sent/351 {30158}         copied to INBOX.Sent/350        0.06 msgs/s  103.559 KiB/s 961.216 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:55 +0300 +03  3075 s  186/761 msgs left
+msg Sent/352 {5242}          copied to INBOX.Sent/351        0.06 msgs/s  103.558 KiB/s 961.221 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:34 +0300 +03  3053 s  185/761 msgs left
+msg Sent/353 {3654318}       copied to INBOX.Sent/352        0.06 msgs/s  103.723 KiB/s 964.706 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:38 +0300 +03  3037 s  184/761 msgs left
+msg Sent/354 {5129497}       copied to INBOX.Sent/353        0.06 msgs/s  103.804 KiB/s 969.598 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:10 +0300 +03  3028 s  183/761 msgs left
+msg Sent/355 {5147107}       copied to INBOX.Sent/354        0.06 msgs/s  103.962 KiB/s 974.507 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:32 +0300 +03  3017 s  182/761 msgs left
+msg Sent/356 {3654681}       copied to INBOX.Sent/355        0.06 msgs/s  104.117 KiB/s 977.992 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:37 +0300 +03  3002 s  181/761 msgs left
+msg Sent/357 {3654189}       copied to INBOX.Sent/356        0.06 msgs/s  104.304 KiB/s 981.477 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:37 +0300 +03  2985 s  180/761 msgs left
+msg Sent/358 {3654369}       copied to INBOX.Sent/357        0.06 msgs/s  104.453 KiB/s 984.962 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:42 +0300 +03  2970 s  179/761 msgs left
+msg Sent/359 {3657218}       copied to INBOX.Sent/358        0.06 msgs/s  104.586 KiB/s 988.450 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:49 +0300 +03  2955 s  178/761 msgs left
+msg Sent/360 {3654387}       copied to INBOX.Sent/359        0.06 msgs/s  104.728 KiB/s 991.935 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:55 +0300 +03  2940 s  177/761 msgs left
+msg Sent/361 {3654737}       copied to INBOX.Sent/360        0.06 msgs/s  104.866 KiB/s 995.421 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:01 +0300 +03  2924 s  176/761 msgs left
+msg Sent/362 {3436862}       copied to INBOX.Sent/361        0.06 msgs/s  105.056 KiB/s 998.698 MiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:58 +0300 +03  2907 s  175/761 msgs left
+msg Sent/363 {3654452}       copied to INBOX.Sent/362        0.06 msgs/s  105.217 KiB/s 0.979 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:01 +0300 +03  2891 s  174/761 msgs left
+msg Sent/364 {4948}          copied to INBOX.Sent/363        0.06 msgs/s  105.215 KiB/s 0.979 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:40 +0300 +03  2870 s  173/761 msgs left
+msg Sent/365 {3654662}       copied to INBOX.Sent/364        0.06 msgs/s  105.345 KiB/s 0.982 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:47 +0300 +03  2855 s  172/761 msgs left
+msg Sent/366 {3654302}       copied to INBOX.Sent/365        0.06 msgs/s  105.503 KiB/s 0.986 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:50 +0300 +03  2839 s  171/761 msgs left
+msg Sent/367 {3653918}       copied to INBOX.Sent/366        0.06 msgs/s  105.679 KiB/s 0.989 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:51 +0300 +03  2822 s  170/761 msgs left
+msg Sent/368 {1634932}       copied to INBOX.Sent/367        0.06 msgs/s  105.749 KiB/s 0.990 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:41 +0300 +03  2804 s  169/761 msgs left
+msg Sent/369 {1633146}       copied to INBOX.Sent/368        0.06 msgs/s  105.824 KiB/s 0.992 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:30 +0300 +03  2785 s  168/761 msgs left
+msg Sent/370 {6405813}       copied to INBOX.Sent/369        0.06 msgs/s  106.107 KiB/s 0.998 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:51 +0300 +03  2773 s  167/761 msgs left
+msg Sent/371 {3654950}       copied to INBOX.Sent/370        0.06 msgs/s  106.215 KiB/s 1.001 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:00 +0300 +03  2758 s  166/761 msgs left
+msg Sent/372 {3655037}       copied to INBOX.Sent/371        0.06 msgs/s  106.406 KiB/s 1.005 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:58 +0300 +03  2741 s  165/761 msgs left
+msg Sent/373 {3654536}       copied to INBOX.Sent/372        0.06 msgs/s  106.498 KiB/s 1.008 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:09 +0300 +03  2727 s  164/761 msgs left
+msg Sent/374 {3654538}       copied to INBOX.Sent/373        0.06 msgs/s  106.643 KiB/s 1.012 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:13 +0300 +03  2711 s  163/761 msgs left
+msg Sent/375 {1514330}       copied to INBOX.Sent/374        0.06 msgs/s  106.724 KiB/s 1.013 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:00 +0300 +03  2692 s  162/761 msgs left
+msg Sent/376 {3654329}       copied to INBOX.Sent/375        0.06 msgs/s  106.844 KiB/s 1.016 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:07 +0300 +03  2676 s  161/761 msgs left
+msg Sent/377 {3654797}       copied to INBOX.Sent/376        0.06 msgs/s  106.981 KiB/s 1.020 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:12 +0300 +03  2661 s  160/761 msgs left
+msg Sent/378 {3654718}       copied to INBOX.Sent/377        0.06 msgs/s  107.188 KiB/s 1.023 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:09 +0300 +03  2644 s  159/761 msgs left
+msg Sent/379 {3654423}       copied to INBOX.Sent/378        0.06 msgs/s  107.307 KiB/s 1.027 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:16 +0300 +03  2628 s  158/761 msgs left
+msg Sent/380 {3654820}       copied to INBOX.Sent/379        0.06 msgs/s  107.487 KiB/s 1.030 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:16 +0300 +03  2612 s  157/761 msgs left
+msg Sent/381 {1547728}       copied to INBOX.Sent/380        0.06 msgs/s  107.490 KiB/s 1.031 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:12 +0300 +03  2594 s  156/761 msgs left
+msg Sent/382 {3654421}       copied to INBOX.Sent/381        0.06 msgs/s  107.567 KiB/s 1.035 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:24 +0300 +03  2580 s  155/761 msgs left
+msg Sent/383 {10610}         copied to INBOX.Sent/382        0.06 msgs/s  107.566 KiB/s 1.035 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:21:03 +0300 +03  2559 s  154/761 msgs left
+msg Sent/384 {2334207}       copied to INBOX.Sent/383        0.06 msgs/s  107.659 KiB/s 1.037 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:58 +0300 +03  2542 s  153/761 msgs left
+msg Sent/385 {9950}          copied to INBOX.Sent/384        0.06 msgs/s  107.655 KiB/s 1.037 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:38 +0300 +03  2521 s  152/761 msgs left
+msg Sent/386 {4602}          copied to INBOX.Sent/385        0.06 msgs/s  107.654 KiB/s 1.037 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:20:17 +0300 +03  2500 s  151/761 msgs left
+msg Sent/387 {9180}          copied to INBOX.Sent/386        0.06 msgs/s  107.651 KiB/s 1.037 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:57 +0300 +03  2480 s  150/761 msgs left
+msg Sent/388 {1536261}       copied to INBOX.Sent/387        0.06 msgs/s  107.723 KiB/s 1.038 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:46 +0300 +03  2461 s  149/761 msgs left
+msg Sent/389 {1579909}       copied to INBOX.Sent/388        0.06 msgs/s  107.776 KiB/s 1.040 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:37 +0300 +03  2443 s  148/761 msgs left
+msg Sent/390 {7126}          copied to INBOX.Sent/389        0.06 msgs/s  107.775 KiB/s 1.040 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:16 +0300 +03  2422 s  147/761 msgs left
+msg Sent/391 {3654432}       copied to INBOX.Sent/390        0.06 msgs/s  107.965 KiB/s 1.043 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:15 +0300 +03  2406 s  146/761 msgs left
+msg Sent/392 {1549466}       copied to INBOX.Sent/391        0.06 msgs/s  108.005 KiB/s 1.045 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:07 +0300 +03  2388 s  145/761 msgs left
+msg Sent/393 {3654359}       copied to INBOX.Sent/392        0.06 msgs/s  108.114 KiB/s 1.048 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:15 +0300 +03  2373 s  144/761 msgs left
+msg Sent/394 {1582746}       copied to INBOX.Sent/393        0.06 msgs/s  108.165 KiB/s 1.050 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:06 +0300 +03  2355 s  143/761 msgs left
+msg Sent/395 {13549}         copied to INBOX.Sent/394        0.06 msgs/s  108.158 KiB/s 1.050 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:47 +0300 +03  2334 s  142/761 msgs left
+msg Sent/396 {18213}         copied to INBOX.Sent/395        0.06 msgs/s  108.152 KiB/s 1.050 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:28 +0300 +03  2314 s  141/761 msgs left
+msg Sent/397 {5207280}       copied to INBOX.Sent/396        0.06 msgs/s  108.335 KiB/s 1.055 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:44 +0300 +03  2301 s  140/761 msgs left
+msg Sent/398 {6749124}       copied to INBOX.Sent/397        0.06 msgs/s  108.511 KiB/s 1.061 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:18 +0300 +03  2291 s  139/761 msgs left
+msg Sent/399 {3654262}       copied to INBOX.Sent/398        0.06 msgs/s  108.609 KiB/s 1.064 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:27 +0300 +03  2276 s  138/761 msgs left
+msg Sent/400 {3654523}       copied to INBOX.Sent/399        0.06 msgs/s  108.732 KiB/s 1.068 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:33 +0300 +03  2260 s  137/761 msgs left
+msg Sent/401 {285696}        copied to INBOX.Sent/400        0.06 msgs/s  108.738 KiB/s 1.068 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:15 +0300 +03  2241 s  136/761 msgs left
+msg Sent/402 {1749601}       copied to INBOX.Sent/401        0.06 msgs/s  108.727 KiB/s 1.070 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:15 +0300 +03  2224 s  135/761 msgs left
+msg Sent/403 {4740}          copied to INBOX.Sent/402        0.06 msgs/s  108.725 KiB/s 1.070 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:55 +0300 +03  2204 s  134/761 msgs left
+msg Sent/404 {4586}          copied to INBOX.Sent/403        0.06 msgs/s  108.724 KiB/s 1.070 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:36 +0300 +03  2185 s  133/761 msgs left
+msg Sent/405 {288302}        copied to INBOX.Sent/404        0.06 msgs/s  108.711 KiB/s 1.070 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:21 +0300 +03  2165 s  132/761 msgs left
+msg Sent/406 {5139766}       copied to INBOX.Sent/405        0.06 msgs/s  108.834 KiB/s 1.075 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:42 +0300 +03  2153 s  131/761 msgs left
+msg Sent/407 {3654363}       copied to INBOX.Sent/406        0.06 msgs/s  108.892 KiB/s 1.078 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:55 +0300 +03  2139 s  130/761 msgs left
+msg Sent/408 {6100}          copied to INBOX.Sent/407        0.06 msgs/s  108.889 KiB/s 1.078 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:36 +0300 +03  2119 s  129/761 msgs left
+msg Sent/409 {3654581}       copied to INBOX.Sent/408        0.06 msgs/s  108.961 KiB/s 1.081 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:47 +0300 +03  2104 s  128/761 msgs left
+msg Sent/410 {3654621}       copied to INBOX.Sent/409        0.06 msgs/s  109.114 KiB/s 1.085 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:49 +0300 +03  2088 s  127/761 msgs left
+msg Sent/411 {50632}         copied to INBOX.Sent/410        0.06 msgs/s  109.116 KiB/s 1.085 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:30 +0300 +03  2069 s  126/761 msgs left
+msg Sent/412 {1597317}       copied to INBOX.Sent/411        0.06 msgs/s  109.174 KiB/s 1.086 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:21 +0300 +03  2051 s  125/761 msgs left
+msg Sent/413 {3654131}       copied to INBOX.Sent/412        0.06 msgs/s  109.301 KiB/s 1.090 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:26 +0300 +03  2035 s  124/761 msgs left
+msg Sent/414 {5142745}       copied to INBOX.Sent/413        0.06 msgs/s  109.442 KiB/s 1.095 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:45 +0300 +03  2022 s  123/761 msgs left
+msg Sent/415 {3657746}       copied to INBOX.Sent/414        0.06 msgs/s  109.496 KiB/s 1.098 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:58 +0300 +03  2007 s  122/761 msgs left
+msg Sent/416 {5131504}       copied to INBOX.Sent/415        0.06 msgs/s  109.621 KiB/s 1.103 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:18 +0300 +03  1994 s  121/761 msgs left
+msg Sent/417 {1972931}       copied to INBOX.Sent/416        0.06 msgs/s  109.680 KiB/s 1.105 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:13 +0300 +03  1977 s  120/761 msgs left
+msg Sent/418 {4629}          copied to INBOX.Sent/417        0.06 msgs/s  109.678 KiB/s 1.105 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:54 +0300 +03  1957 s  119/761 msgs left
+msg Sent/419 {4620}          copied to INBOX.Sent/418        0.06 msgs/s  109.677 KiB/s 1.105 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:34 +0300 +03  1938 s  118/761 msgs left
+msg Sent/420 {11044684}      copied to INBOX.Sent/419        0.06 msgs/s  109.985 KiB/s 1.115 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:36 +0300 +03  1931 s  117/761 msgs left
+msg Sent/421 {3654373}       copied to INBOX.Sent/420        0.06 msgs/s  110.148 KiB/s 1.118 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:36 +0300 +03  1915 s  116/761 msgs left
+msg Sent/422 {3654177}       copied to INBOX.Sent/421        0.06 msgs/s  110.275 KiB/s 1.122 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:40 +0300 +03  1899 s  115/761 msgs left
+msg Sent/423 {3654582}       copied to INBOX.Sent/422        0.06 msgs/s  110.406 KiB/s 1.125 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:44 +0300 +03  1883 s  114/761 msgs left
+msg Sent/424 {3654315}       copied to INBOX.Sent/423        0.06 msgs/s  110.569 KiB/s 1.128 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:44 +0300 +03  1866 s  113/761 msgs left
+msg Sent/425 {1560844}       copied to INBOX.Sent/424        0.06 msgs/s  110.626 KiB/s 1.130 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:34 +0300 +03  1848 s  112/761 msgs left
+msg Sent/426 {5233904}       copied to INBOX.Sent/425        0.06 msgs/s  110.827 KiB/s 1.135 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:46 +0300 +03  1833 s  111/761 msgs left
+msg Sent/427 {3654401}       copied to INBOX.Sent/426        0.06 msgs/s  110.954 KiB/s 1.138 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:50 +0300 +03  1818 s  110/761 msgs left
+msg Sent/428 {9479}          copied to INBOX.Sent/427        0.06 msgs/s  110.952 KiB/s 1.138 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:31 +0300 +03  1798 s  109/761 msgs left
+msg Sent/429 {9463}          copied to INBOX.Sent/428        0.06 msgs/s  110.951 KiB/s 1.138 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:12 +0300 +03  1779 s  108/761 msgs left
+msg Sent/430 {1540575}       copied to INBOX.Sent/429        0.06 msgs/s  110.996 KiB/s 1.140 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:04 +0300 +03  1761 s  107/761 msgs left
+msg Sent/431 {2334686}       copied to INBOX.Sent/430        0.06 msgs/s  111.073 KiB/s 1.142 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:00 +0300 +03  1744 s  106/761 msgs left
+msg Sent/432 {2340201}       copied to INBOX.Sent/431        0.06 msgs/s  111.140 KiB/s 1.144 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:57 +0300 +03  1728 s  105/761 msgs left
+msg Sent/433 {4888}          copied to INBOX.Sent/432        0.06 msgs/s  111.134 KiB/s 1.144 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:39 +0300 +03  1709 s  104/761 msgs left
+msg Sent/434 {5253902}       copied to INBOX.Sent/433        0.06 msgs/s  111.302 KiB/s 1.149 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:54 +0300 +03  1694 s  103/761 msgs left
+msg Sent/435 {3654354}       copied to INBOX.Sent/434        0.06 msgs/s  111.475 KiB/s 1.152 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:53 +0300 +03  1678 s  102/761 msgs left
+msg Sent/436 {1599917}       copied to INBOX.Sent/435        0.06 msgs/s  111.540 KiB/s 1.154 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:43 +0300 +03  1660 s  101/761 msgs left
+msg Sent/437 {3654618}       copied to INBOX.Sent/436        0.06 msgs/s  111.700 KiB/s 1.157 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:43 +0300 +03  1643 s  100/761 msgs left
+msg Sent/438 {3654557}       copied to INBOX.Sent/437        0.06 msgs/s  111.867 KiB/s 1.161 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:42 +0300 +03  1627 s  99/761 msgs left
+msg Sent/439 {3654390}       copied to INBOX.Sent/438        0.06 msgs/s  112.005 KiB/s 1.164 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:44 +0300 +03  1611 s  98/761 msgs left
+msg Sent/440 {3654689}       copied to INBOX.Sent/439        0.06 msgs/s  112.128 KiB/s 1.167 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:48 +0300 +03  1595 s  97/761 msgs left
+msg Sent/441 {3654562}       copied to INBOX.Sent/440        0.06 msgs/s  112.226 KiB/s 1.171 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:55 +0300 +03  1579 s  96/761 msgs left
+msg Sent/442 {3654634}       copied to INBOX.Sent/441        0.06 msgs/s  112.355 KiB/s 1.174 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:58 +0300 +03  1563 s  95/761 msgs left
+msg Sent/443 {3654209}       copied to INBOX.Sent/442        0.06 msgs/s  112.489 KiB/s 1.178 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:00 +0300 +03  1547 s  94/761 msgs left
+msg Sent/444 {3654705}       copied to INBOX.Sent/443        0.06 msgs/s  112.623 KiB/s 1.181 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:03 +0300 +03  1531 s  93/761 msgs left
+msg Sent/445 {3654510}       copied to INBOX.Sent/444        0.06 msgs/s  112.757 KiB/s 1.184 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:05 +0300 +03  1515 s  92/761 msgs left
+msg Sent/446 {5904}          copied to INBOX.Sent/445        0.06 msgs/s  112.755 KiB/s 1.184 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:47 +0300 +03  1496 s  91/761 msgs left
+msg Sent/447 {3654670}       copied to INBOX.Sent/446        0.06 msgs/s  112.849 KiB/s 1.188 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:54 +0300 +03  1480 s  90/761 msgs left
+msg Sent/448 {3654287}       copied to INBOX.Sent/447        0.06 msgs/s  113.018 KiB/s 1.191 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:52 +0300 +03  1464 s  89/761 msgs left
+msg Sent/449 {3654397}       copied to INBOX.Sent/448        0.06 msgs/s  113.182 KiB/s 1.195 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:51 +0300 +03  1447 s  88/761 msgs left
+msg Sent/450 {3654301}       copied to INBOX.Sent/449        0.06 msgs/s  113.344 KiB/s 1.198 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:50 +0300 +03  1431 s  87/761 msgs left
+msg Sent/451 {3654622}       copied to INBOX.Sent/450        0.06 msgs/s  113.485 KiB/s 1.201 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:52 +0300 +03  1414 s  86/761 msgs left
+msg Sent/452 {1543390}       copied to INBOX.Sent/451        0.06 msgs/s  113.511 KiB/s 1.203 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:45 +0300 +03  1397 s  85/761 msgs left
+msg Sent/453 {3654779}       copied to INBOX.Sent/452        0.06 msgs/s  113.558 KiB/s 1.206 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:57 +0300 +03  1382 s  84/761 msgs left
+msg Sent/454 {1588627}       copied to INBOX.Sent/453        0.06 msgs/s  113.607 KiB/s 1.208 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:48 +0300 +03  1365 s  83/761 msgs left
+msg Sent/455 {3654345}       copied to INBOX.Sent/454        0.06 msgs/s  113.766 KiB/s 1.211 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:48 +0300 +03  1348 s  82/761 msgs left
+msg Sent/456 {3654944}       copied to INBOX.Sent/455        0.06 msgs/s  113.882 KiB/s 1.215 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:52 +0300 +03  1332 s  81/761 msgs left
+msg Sent/457 {3654468}       copied to INBOX.Sent/456        0.06 msgs/s  114.002 KiB/s 1.218 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:55 +0300 +03  1316 s  80/761 msgs left
+msg Sent/458 {5185530}       copied to INBOX.Sent/457        0.06 msgs/s  114.145 KiB/s 1.223 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:11 +0300 +03  1301 s  79/761 msgs left
+msg Sent/459 {3654610}       copied to INBOX.Sent/458        0.06 msgs/s  114.267 KiB/s 1.226 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:14 +0300 +03  1285 s  78/761 msgs left
+msg Sent/460 {1539067}       copied to INBOX.Sent/459        0.06 msgs/s  114.314 KiB/s 1.228 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:19:05 +0300 +03  1268 s  77/761 msgs left
+msg Sent/461 {1542819}       copied to INBOX.Sent/460        0.06 msgs/s  114.355 KiB/s 1.229 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:57 +0300 +03  1250 s  76/761 msgs left
+msg Sent/462 {1592981}       copied to INBOX.Sent/461        0.06 msgs/s  114.421 KiB/s 1.231 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:46 +0300 +03  1233 s  75/761 msgs left
+msg Sent/463 {1540609}       copied to INBOX.Sent/462        0.06 msgs/s  114.494 KiB/s 1.232 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:35 +0300 +03  1215 s  74/761 msgs left
+msg Sent/464 {3654472}       copied to INBOX.Sent/463        0.06 msgs/s  114.643 KiB/s 1.235 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:35 +0300 +03  1199 s  73/761 msgs left
+msg Sent/465 {1594327}       copied to INBOX.Sent/464        0.06 msgs/s  114.708 KiB/s 1.237 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:25 +0300 +03  1182 s  72/761 msgs left
+msg Sent/466 {4535}          copied to INBOX.Sent/465        0.06 msgs/s  114.706 KiB/s 1.237 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:07 +0300 +03  1163 s  71/761 msgs left
+msg Sent/467 {5213031}       copied to INBOX.Sent/466        0.06 msgs/s  114.952 KiB/s 1.242 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:11 +0300 +03  1147 s  70/761 msgs left
+msg Sent/468 {3654252}       copied to INBOX.Sent/467        0.06 msgs/s  115.073 KiB/s 1.245 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:14 +0300 +03  1131 s  69/761 msgs left
+msg Sent/469 {4434}          copied to INBOX.Sent/468        0.06 msgs/s  115.071 KiB/s 1.245 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:56 +0300 +03  1113 s  68/761 msgs left
+msg Sent/470 {3654582}       copied to INBOX.Sent/469        0.06 msgs/s  115.156 KiB/s 1.249 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:03 +0300 +03  1098 s  67/761 msgs left
+msg Sent/471 {3654263}       copied to INBOX.Sent/470        0.06 msgs/s  115.290 KiB/s 1.252 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:04 +0300 +03  1081 s  66/761 msgs left
+msg Sent/472 {1642739}       copied to INBOX.Sent/471        0.06 msgs/s  115.348 KiB/s 1.253 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:55 +0300 +03  1064 s  65/761 msgs left
+msg Sent/473 {3654461}       copied to INBOX.Sent/472        0.06 msgs/s  115.383 KiB/s 1.257 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:07 +0300 +03  1049 s  64/761 msgs left
+msg Sent/474 {3654821}       copied to INBOX.Sent/473        0.06 msgs/s  115.580 KiB/s 1.260 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:02 +0300 +03  1032 s  63/761 msgs left
+msg Sent/475 {12019}         copied to INBOX.Sent/474        0.06 msgs/s  115.576 KiB/s 1.260 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:45 +0300 +03  1014 s  62/761 msgs left
+msg Sent/476 {3654510}       copied to INBOX.Sent/475        0.06 msgs/s  115.676 KiB/s 1.264 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:50 +0300 +03  998 s  61/761 msgs left
+msg Sent/477 {3654456}       copied to INBOX.Sent/476        0.06 msgs/s  115.786 KiB/s 1.267 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:54 +0300 +03  982 s  60/761 msgs left
+msg Sent/478 {3654411}       copied to INBOX.Sent/477        0.06 msgs/s  115.943 KiB/s 1.271 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:52 +0300 +03  966 s  59/761 msgs left
+msg Sent/479 {16255}         copied to INBOX.Sent/478        0.06 msgs/s  115.942 KiB/s 1.271 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:35 +0300 +03  948 s  58/761 msgs left
+msg Sent/480 {3654240}       copied to INBOX.Sent/479        0.06 msgs/s  116.050 KiB/s 1.274 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:39 +0300 +03  932 s  57/761 msgs left
+msg Sent/481 {3654465}       copied to INBOX.Sent/480        0.06 msgs/s  116.158 KiB/s 1.277 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:43 +0300 +03  916 s  56/761 msgs left
+msg Sent/482 {4512}          copied to INBOX.Sent/481        0.06 msgs/s  116.157 KiB/s 1.277 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:25 +0300 +03  898 s  55/761 msgs left
+msg Sent/483 {1662923}       copied to INBOX.Sent/482        0.06 msgs/s  116.218 KiB/s 1.279 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:16 +0300 +03  881 s  54/761 msgs left
+msg Sent/484 {190989}        copied to INBOX.Sent/483        0.06 msgs/s  116.223 KiB/s 1.279 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:00 +0300 +03  864 s  53/761 msgs left
+msg Sent/485 {1625746}       copied to INBOX.Sent/484        0.06 msgs/s  116.283 KiB/s 1.281 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:51 +0300 +03  847 s  52/761 msgs left
+msg Sent/486 {1621980}       copied to INBOX.Sent/485        0.06 msgs/s  116.337 KiB/s 1.282 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:42 +0300 +03  830 s  51/761 msgs left
+msg Sent/487 {3654330}       copied to INBOX.Sent/486        0.06 msgs/s  116.417 KiB/s 1.285 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:49 +0300 +03  814 s  50/761 msgs left
+msg Sent/488 {3654469}       copied to INBOX.Sent/487        0.06 msgs/s  116.516 KiB/s 1.289 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:54 +0300 +03  798 s  49/761 msgs left
+msg Sent/489 {5317091}       copied to INBOX.Sent/488        0.06 msgs/s  116.663 KiB/s 1.294 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:08 +0300 +03  783 s  48/761 msgs left
+msg Sent/490 {3654424}       copied to INBOX.Sent/489        0.06 msgs/s  116.799 KiB/s 1.297 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:09 +0300 +03  767 s  47/761 msgs left
+msg Sent/491 {3654819}       copied to INBOX.Sent/490        0.06 msgs/s  116.831 KiB/s 1.301 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:21 +0300 +03  751 s  46/761 msgs left
+msg Sent/492 {3654692}       copied to INBOX.Sent/491        0.06 msgs/s  116.907 KiB/s 1.304 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:28 +0300 +03  735 s  45/761 msgs left
+msg Sent/493 {3230901}       copied to INBOX.Sent/492        0.06 msgs/s  116.979 KiB/s 1.307 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:32 +0300 +03  719 s  44/761 msgs left
+msg Sent/494 {3298546}       copied to INBOX.Sent/493        0.06 msgs/s  117.045 KiB/s 1.310 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:36 +0300 +03  703 s  43/761 msgs left
+msg Sent/495 {3654436}       copied to INBOX.Sent/494        0.06 msgs/s  117.158 KiB/s 1.314 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:39 +0300 +03  687 s  42/761 msgs left
+msg Sent/496 {3654369}       copied to INBOX.Sent/495        0.06 msgs/s  117.169 KiB/s 1.317 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:53 +0300 +03  671 s  41/761 msgs left
+msg Sent/497 {228893}        copied to INBOX.Sent/496        0.06 msgs/s  117.175 KiB/s 1.317 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:37 +0300 +03  654 s  40/761 msgs left
+msg Sent/498 {9528}          copied to INBOX.Sent/497        0.06 msgs/s  117.173 KiB/s 1.317 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:20 +0300 +03  637 s  39/761 msgs left
+msg Sent/499 {3654569}       copied to INBOX.Sent/498        0.06 msgs/s  117.322 KiB/s 1.321 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:19 +0300 +03  620 s  38/761 msgs left
+msg Sent/500 {3657711}       copied to INBOX.Sent/499        0.06 msgs/s  117.460 KiB/s 1.324 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:20 +0300 +03  604 s  37/761 msgs left
+msg Sent/501 {3657735}       copied to INBOX.Sent/500        0.06 msgs/s  117.552 KiB/s 1.327 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:25 +0300 +03  588 s  36/761 msgs left
+msg Sent/502 {3653984}       copied to INBOX.Sent/501        0.06 msgs/s  117.545 KiB/s 1.331 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:40 +0300 +03  572 s  35/761 msgs left
+msg Sent/503 {3654329}       copied to INBOX.Sent/502        0.06 msgs/s  117.648 KiB/s 1.334 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:44 +0300 +03  556 s  34/761 msgs left
+msg Sent/504 {3654647}       copied to INBOX.Sent/503        0.06 msgs/s  117.736 KiB/s 1.338 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:49 +0300 +03  540 s  33/761 msgs left
+msg Sent/505 {3654233}       copied to INBOX.Sent/504        0.06 msgs/s  117.775 KiB/s 1.341 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:00 +0300 +03  524 s  32/761 msgs left
+msg Sent/506 {3654458}       copied to INBOX.Sent/505        0.06 msgs/s  117.816 KiB/s 1.344 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:18:10 +0300 +03  508 s  31/761 msgs left
+msg Sent/507 {767707}        copied to INBOX.Sent/506        0.06 msgs/s  117.830 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:58 +0300 +03  491 s  30/761 msgs left
+msg Sent/508 {9136}          copied to INBOX.Sent/507        0.06 msgs/s  117.829 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:41 +0300 +03  474 s  29/761 msgs left
+msg Sent/509 {5349}          copied to INBOX.Sent/508        0.06 msgs/s  117.822 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:25 +0300 +03  457 s  28/761 msgs left
+msg Sent/510 {66621}         copied to INBOX.Sent/509        0.06 msgs/s  117.817 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:17:09 +0300 +03  440 s  27/761 msgs left
+msg Sent/511 {4586}          copied to INBOX.Sent/510        0.06 msgs/s  117.816 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:52 +0300 +03  424 s  26/761 msgs left
+msg Sent/512 {8912}          copied to INBOX.Sent/511        0.06 msgs/s  117.814 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:36 +0300 +03  407 s  25/761 msgs left
+msg Sent/513 {77486}         copied to INBOX.Sent/512        0.06 msgs/s  117.814 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:20 +0300 +03  390 s  24/761 msgs left
+msg Sent/514 {58818}         copied to INBOX.Sent/513        0.06 msgs/s  117.815 KiB/s 1.345 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:16:03 +0300 +03  373 s  23/761 msgs left
+msg Sent/515 {267215}        copied to INBOX.Sent/514        0.06 msgs/s  117.812 KiB/s 1.346 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:49 +0300 +03  357 s  22/761 msgs left
+msg Sent/516 {163968}        copied to INBOX.Sent/515        0.06 msgs/s  117.811 KiB/s 1.346 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:34 +0300 +03  340 s  21/761 msgs left
+msg Sent/517 {2963241}       copied to INBOX.Sent/516        0.06 msgs/s  117.843 KiB/s 1.348 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:39 +0300 +03  324 s  20/761 msgs left
+msg Sent/518 {1350712}       copied to INBOX.Sent/517        0.06 msgs/s  117.843 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:34 +0300 +03  308 s  19/761 msgs left
+msg Sent/519 {305287}        copied to INBOX.Sent/518        0.06 msgs/s  117.856 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:19 +0300 +03  291 s  18/761 msgs left
+msg Sent/520 {310163}        copied to INBOX.Sent/519        0.06 msgs/s  117.866 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:15:04 +0300 +03  274 s  17/761 msgs left
+msg Sent/521 {6101}          copied to INBOX.Sent/520        0.06 msgs/s  117.865 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:14:47 +0300 +03  258 s  16/761 msgs left
+msg Sent/522 {4701}          copied to INBOX.Sent/521        0.06 msgs/s  117.861 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:14:31 +0300 +03  242 s  15/761 msgs left
+msg Sent/523 {5687}          copied to INBOX.Sent/522        0.06 msgs/s  117.860 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:14:15 +0300 +03  225 s  14/761 msgs left
+ETA: Нядзеля 14 мая 2023-05-14 07:14:15 +0300 +03  225 s  14/761 msgs left
+Folder     6/7 [Spam]                              -> [INBOX.Spam]                       
+Host1: folder [Spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Spam] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Spam] permanentflags: 
+Host1: folder [Spam] considering 0 messages
+Host2: folder [INBOX.Spam] considering 0 messages
+Host1: folder [Spam] selected 0 messages, duplicates 0
+Host2: folder [INBOX.Spam] selected 0 messages, duplicates 0
+ETA: Нядзеля 14 мая 2023-05-14 07:14:16 +0300 +03  225 s  14/761 msgs left
+Folder     7/7 [Trash]                             -> [INBOX.Trash]                      
+Host1: folder [Trash] has 14 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Trash] has 0 messages in total (mentioned by SELECT)
+Host2: folder [INBOX.Trash] permanentflags: 
+Host1: folder [Trash] considering 14 messages
+Host2: folder [INBOX.Trash] considering 0 messages
+Host1: folder [Trash] selected 14 messages, duplicates 0
+Host2: folder [INBOX.Trash] selected 0 messages, duplicates 0
+msg Trash/33 {98105}          copied to INBOX.Trash/1          0.06 msgs/s  117.836 KiB/s 1.350 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:14:02 +0300 +03  209 s  13/761 msgs left
+msg Trash/34 {89115}          copied to INBOX.Trash/2          0.06 msgs/s  117.838 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:13:46 +0300 +03  193 s  12/761 msgs left
+msg Trash/35 {72107}          copied to INBOX.Trash/3          0.06 msgs/s  117.841 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:13:30 +0300 +03  176 s  11/761 msgs left
+msg Trash/36 {83277}          copied to INBOX.Trash/4          0.06 msgs/s  117.837 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:13:15 +0300 +03  160 s  10/761 msgs left
+msg Trash/37 {99033}          copied to INBOX.Trash/5          0.06 msgs/s  117.832 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:13:00 +0300 +03  144 s  9/761 msgs left
+msg Trash/38 {99238}          copied to INBOX.Trash/6          0.06 msgs/s  117.827 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:12:46 +0300 +03  128 s  8/761 msgs left
+msg Trash/39 {76193}          copied to INBOX.Trash/7          0.06 msgs/s  117.829 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:12:30 +0300 +03  112 s  7/761 msgs left
+msg Trash/40 {103163}         copied to INBOX.Trash/8          0.06 msgs/s  117.833 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:12:14 +0300 +03  96 s  6/761 msgs left
+msg Trash/41 {104429}         copied to INBOX.Trash/9          0.06 msgs/s  117.837 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:11:59 +0300 +03  80 s  5/761 msgs left
+msg Trash/42 {86579}          copied to INBOX.Trash/10         0.06 msgs/s  117.841 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:11:43 +0300 +03  64 s  4/761 msgs left
+msg Trash/43 {95101}          copied to INBOX.Trash/11         0.06 msgs/s  117.842 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:11:28 +0300 +03  48 s  3/761 msgs left
+msg Trash/44 {93585}          copied to INBOX.Trash/12         0.06 msgs/s  117.839 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:11:13 +0300 +03  32 s  2/761 msgs left
+msg Trash/45 {92417}          copied to INBOX.Trash/13         0.06 msgs/s  117.836 KiB/s 1.351 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:10:58 +0300 +03  16 s  1/761 msgs left
+msg Trash/46 {101559}         copied to INBOX.Trash/14         0.06 msgs/s  117.832 KiB/s 1.352 GiB copied ETA: Нядзеля 14 мая 2023-05-14 07:10:44 +0300 +03  0 s  0/761 msgs left
+ETA: Нядзеля 14 мая 2023-05-14 07:10:44 +0300 +03  0 s  0/761 msgs left
+++++ End looping on each folder
+
+Folders sizes after the synchronization.
+You can remove this foldersizes listing by using  "--nofoldersizesatend"
+Host1 folder     1/7 [Drafts]                            Size:  16735876 Messages:    18 Biggest:   4753897
+Host2 folder     1/7 [INBOX.Drafts]                      Size:  16735876 Messages:    18 Biggest:   4753897
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     2/7 [Drafts|template]                   Size:   3652858 Messages:     1 Biggest:   3652858
+Host2 folder     2/7 [INBOX.Drafts.template]             Size:   3652858 Messages:     1 Biggest:   3652858
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     3/7 [INBOX]                             Size:  62063958 Messages:   206 Biggest:   4974643
+Host2 folder     3/7 [INBOX]                             Size:  62063958 Messages:   206 Biggest:   4974643
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     4/7 [Outbox]                            Size:         0 Messages:     0 Biggest:         0
+Host2 folder     4/7 [INBOX.Outbox]                      Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     5/7 [Sent]                              Size: 1333711203 Messages:   522 Biggest:  22329794
+Host2 folder     5/7 [INBOX.Sent]                        Size: 1367461810 Messages:   522 Biggest:  40794482
+Host2-Host1                                                     33750607               0           18464688
+
+Host1 folder     6/7 [Spam]                              Size:         0 Messages:     0 Biggest:         0
+Host2 folder     6/7 [INBOX.Spam]                        Size:         0 Messages:     0 Biggest:         0
+Host2-Host1                                                            0               0                  0
+
+Host1 folder     7/7 [Trash]                             Size:   1293901 Messages:    14 Biggest:    104429
+Host2 folder     7/7 [INBOX.Trash]                       Size:   1293901 Messages:    14 Biggest:    104429
+Host2-Host1                                                            0               0                  0
+
+Host1 Nb folders:                     7 folders
+Host2 Nb folders:                     7 folders
+
+Host1 Nb messages:                  761 messages
+Host2 Nb messages:                  761 messages
+
+Host1 Total size:            1417457796 bytes (1.320 GiB)
+Host2 Total size:            1451208403 bytes (1.352 GiB)
+
+Host1 Biggest message:         22329794 bytes (21.295 MiB)
+Host2 Biggest message:         40794482 bytes (38.905 MiB)
+
+Time spent on sizing:         5.0 seconds
+++++ Statistics
+Transfer started on                     : Нядзеля 14 мая 2023-05-14 03:50:03 +0300 +03
+Transfer ended on                       : Нядзеля 14 мая 2023-05-14 07:10:49 +0300 +03
+Transfer time                           : 12045.3 sec
+Folders synced                          : 7/7 synced
+Messages transferred                    : 761 
+Messages skipped                        : 0
+Messages found duplicate on host1       : 0
+Messages found duplicate on host2       : 0
+Messages found crossduplicate on host2  : 0
+Messages void (noheader) on host1       : 0  
+Messages void (noheader) on host2       : 0
+Messages found in host1 not in host2    : 0 messages
+Messages found in host2 not in host1    : 0 messages
+Messages deleted on host1               : 0
+Messages deleted on host2               : 0
+Total bytes transferred                 : 1451208403 (1.352 GiB)
+Total bytes skipped                     : 0 (0.000 KiB)
+Message rate                            : 0.1 messages/s
+Average bandwidth rate                  : 117.7 KiB/s
+Reconnections to host1                  : 0
+Reconnections to host2                  : 0
+Memory consumption at the end           : 211.9 MiB (*time 708.9 MiB*h) (started with 163.2 MiB)
+Load end is                             : 0.19 0.16 0.19 1/731 on 2 cores
+CPU time and %cpu                       : 164.99 sec 1.4 %cpu 0.7 %allcpus
+Biggest message transferred             : 40794482 bytes (38.905 MiB)
+Memory/biggest message ratio            : 5.4
+Start difference host2 - host1          : -761 messages, -1417457796 bytes (-1.320 GiB)
+Final difference host2 - host1          : 0 messages, 33750607 bytes (32.187 MiB)
+The sync looks good, all 761 identified messages in host1 are on host2.
+There is no unidentified message on host1.
+The sync is strict, all 761 identified messages in host2 are on host1.
+Detected 0 errors
+Check if a new imapsync release is available by adding --releasecheck
+Homepage: https://imapsync.lamiral.info/
+Exiting with return value 0 (EX_OK: successful termination) 0/50 nb_errors/max_errors PID 18500
+Log file is LOG_imapsync/2023_05_14_03_50_03_828_as@mdfkl.by_as@mdfkl.by.txt ( to change it, use --logfile filepath ; or use --nolog to turn off logging )

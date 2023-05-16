@@ -5,7 +5,7 @@
 
 <body>	
     <H1>Миграция почтового ящика</H1>
-    <FORM action="code.php" method="POST">
+    <FORM method="POST">
 	<TABLE>
 	    <TR><TD><B>Исходный почтовый ящик:<B></TD>
 	    <TD><INPUT NAME="mail1" SIZE=20 VALUE=""
@@ -25,7 +25,8 @@
 	    <TR><TD><B>IMAP сервер:<B></TD>
 	    <TD><INPUT NAME="msrv2" SIZE=20 VALUE=""<TD>
 	</TABLE>	    
-	<INPUT TYPE="submit" NAME="submit" VALUE="Отправить данные">
+	<INPUT formaction="check-size.php" TYPE="submit" NAME="submit" VALUE="Проверить размер">
+	<INPUT formaction="code.php" TYPE="submit" NAME="submit" VALUE="Отправить данные">
     </FORM>
 </body>
 </html>
