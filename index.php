@@ -10,25 +10,25 @@
 	    <TR><TD><B>Исходный почтовый ящик:<B></TD>
 	    <TD><INPUT NAME="mail1" SIZE=20 VALUE="">
 	    
-	    <TR><TD><B>Пароль:<B>
-	    <TD><INPUT TYPE="password" NAME="pass1" SIZE=20 VALUE="">
+	    <TD><B>Пароль:<B>
+	    <TD><INPUT NAME="pass1" SIZE=20 VALUE="">
 	    
-	    <TR><TD><B>IMAP сервер:<B></TD>
+	    <TD><B>IMAP сервер:<B></TD>
 	    <TD><INPUT NAME="msrv1" SIZE=20 VALUE=""></TD>
 	    
 	    <TR><TD><B>Конечный почтовый ящик:<B></TD>
 	    <TD><INPUT NAME="mail2" SIZE=20 VALUE="">
 	    
-	    <TR><TD><B>Пароль:<B>
-	    <TD><INPUT TYPE="password" NAME="pass2" SIZE=20 VALUE="">
+	    <TD><B>Пароль:<B>
+	    <TD><INPUT NAME="pass2" SIZE=20 VALUE="">
 	    
-	    <TR><TD><B>IMAP сервер:<B></TD>
-	    <TD><INPUT NAME="msrv2" SIZE=20 VALUE=""></TD>
+	    <TD><B>IMAP сервер:<B></TD>
+	    <TD><INPUT NAME="msrv2" SIZE=20 VALUE=""<TD>
 	    
 	    <TR><TD><B>С какой даты осуществляется перенос:<B></TD>
 	    
 	    <TR><TD><B>Число:<B></TD>
-	    <TD><INPUT NAME="day" SIZE=20 VALUE="">
+	    <TD><INPUT NAME="day" SIZE=20 VALUE=""
 	    
 	    <TR><TD><B>Месяц:<B>
 	    <TD>
@@ -49,7 +49,7 @@
 	    	</select>
 	    
 	    <TR><TD><B>Год:<B></TD>
-	    <TD><INPUT NAME="year" SIZE=20 VALUE=""></TD>
+	    <TD><INPUT NAME="year" SIZE=20 VALUE=""<TD>
 	   
 	</TABLE>	    
 	<INPUT formaction="check-size.php" TYPE="submit" NAME="submit" VALUE="Проверить размер">
