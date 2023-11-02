@@ -38,4 +38,8 @@
     }
     
     echo 'Заявка на миграцию '.$mail2.' принята. Ожидайте уведомление в Zammad.';
+
+    $command = 'python3 /var/www/html/migrate.py '.$mail1.' '.$mail2;
+    exec($command);
 ?>
+

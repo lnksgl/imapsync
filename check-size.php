@@ -37,5 +37,8 @@
 	    fclose($file);
     }
     
-    echo 'Размер для требуемого ящика доступен по ссылке - http://192.168.10.46/cron/LOG_imapsync/';
+    echo 'Ожидайте письмо в Zammad с информацией о весе почтовых ящиков.';
+
+    $command = 'python3 /var/www/html/check-size.py '.$mail1.' '.$mail2;
+    exec($command);
 ?>
